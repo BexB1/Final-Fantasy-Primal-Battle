@@ -1,0 +1,13 @@
+body {
+  font-family: font-family: 'Playfair Display SC', serif;
+  background-color: #c6c6ec;
+  text-transform: uppercase;
+}
+
+#wrapper {
+  background-color: #FFF;
+  top: 100px;
+  width: 1000px;
+  height: 600px;
+}
+

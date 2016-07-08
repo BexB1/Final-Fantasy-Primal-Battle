@@ -1,0 +1,36 @@
+OX_7572287467({
+  "ads":{
+    "chain":1,
+    "medium":"w",
+    "record_tmpl":"http://ox-d.wikia.servedbyopenx.com/{medium}/1.0/{rtype}?ts={txn_state}",
+    "pixels":"http://us-u.openx.net/w/1.0/pd?plm=5&ph=50cd45fa-7093-4f15-95ec-1722f80fddf1",
+    "adunits" : [
+      {
+        "auid":"538229265",
+        "chain_timeout":"",
+        "chain_revenue":"932",
+        "chain":[
+          {
+            "is_fallback":0,
+            "framed":1,
+            "ad_id":"537161269",
+            "adv_acct_id":"537073219",
+            "is_ng":1,
+            "adv_id":"152d07b1-da41-4c40-ad18-fe74c269534a:537073219",
+            "brand_id":"775",
+            "cpipc":932,
+            "auct_win_is_deal":0,
+            "pub_rev":"932",
+            "width":"300",
+            "height":"600",
+            "html":"<iframe src=\"http://aax-eu.amazon-adsystem.com/e/ox/impi?b=II_OSDI3eETroEmU2XKOwmEAAAFVxhsnzQMAAAUUJ0ggig&w=AAABVcYbKJPieDDltWUV2Gd474rd_qBMBUurMg&bi=St7yANgOQEJvZgQVZv0kDdFxRTvewJTahv.BdUsVG.WTFLziIrf4RpP7k.bE92d35L3XV1l4pe9uVl6nBzKzUkcpkWZ8zNYlD1pgBPULkCCqJr7cpesR.kfNkpkQeFaFBmrvHoUMGF1fjZiDoncJifOf58AfP.r8HFhE7C5T2Y.zzfMuBiYNe7Um1DjlChloat9BZFRA5WB0B.WpcL-am.rYDlt6HVXWCngr-YPI7RQGmGPt9rE.svI1nvyJNv35OimxPAOZt9LpfGyHp.cP1bqfWceU.8iUpboOlau8o7U9VU3NqixWSUIRmtR7xF.WzVrdxXud1sQZviB02RavGb3CDMv8jsMbGJsBhMy7aO2RGOvm25wfnMXlkWqJNQn3L3UfiPY2G5s1sUkbdaVIRTTkLiOABc-9JNY6Mq1cF-KsZu04ErE5kAcRy21T1Y0OLjQcWLvLvKRAU-CRMIeIRJos-HkOEtv-eEPZr0lMWpqc5DBxcvaUReRuyCang6n2Pd9yE1-UuRyYp0eMfSDddg__&s=300x600\" width=300 height=600 frameborder=0 marginwidth=0 marginheight=0 scrolling=\"no\"></iframe><iframe src=\"//aax-eu.amazon-adsystem.com/s/iu3?d=openx.com&cb=540357\" width=\"1\" height=\"1\" style=\"display:none\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"></iframe><script src=\"http://s.update.openx.com/2/413654/analytics.js?si=537210145&ti=ad5a6a20-ed46-4796-9c5f-3e2cca846ca6&pc=538229265&cb=3Vvxi34sMvnsL4-MW93Fp4Mnya&dt=4136541438897963103000\" async=\"true\"></script>\n",
+            "target":"_blank",
+            "ts":"1fHJpZD1hZDVhNmEyMC1lZDQ2LTQ3OTYtOWM1Zi0zZTJjY2E4NDZjYTZ8cnQ9MTQ2NzkwNzUxNnxhdWlkPTUzODIyOTI2NXxhdW09RE1JRC5XRUJ8c2lkPTUzNzIxMDE0NXxwdWI9NTM3MDg2ODA5fHBjPVVTRHxyYWlkPWIzNzZlOWNiLTY0YWUtNDhkNC05MzQwLTZlMTRjM2M0MGY1MXxjbD0xfGFpZD01MzcxNjEyNjl8dD0xMnxhcz0zMDB4NjAwfGxpZD01MzcxMjcyNzV8b2lkPTUzNzA5NTk1N3xwPTEyNjB8cHI9OTMyfGF0Yj0xOTUzfGFkdj01MzcwNzMyMTl8YWM9VVNEfHBtPVBSSUNJTkcuQ1BNfG09MXxhaT0xNTJkMDdiMS1kYTQxLTRjNDAtYWQxOC1mZTc0YzI2OTUzNGF8bWM9VVNEfG1yPTMyOHxwaT05MzJ8bXVpPWNlZDdlOTE2LTNjYjEtNDBhYi05YWMxLTM3ZjFjMzI4YmM2YXxtYT00M2M4YzgxYS1hMTdkLTRlNDQtYjljZC02MzFjYzkxMzNjMDV8bXJ0PTE0Njc5MDc1MTZ8bXJjPVNSVF9XT058bXdhPTUzNzA3MzIxOXxtd2JpPTc3NXxtd2I9MTk1M3xtYXA9MTI2MHxlbGc9MXxtb2M9VVNEfG1vcj0zMjh8bXBjPVVTRHxtcHI9OTMyfG1wZj01MHxtbWY9NTB8bXBuZj01MHxtbW5mPTUwfHBjdj0yMDE2MDUxOHxtbz1PWHxtcHU9OTMyfG1jcD0xMjYwfGFxdD1ydGJ8bXdjPTUzNzA5NTk1N3xtd3A9NTM3MTI3Mjc1fG13Y3I9NTM3MTYxMjY5fG13aXM9MXxtd3B0PW94X3Byb3RvfGNpPTF8dXI9S3hQTzROWldXSnxiZHI9MXxsbj01MzcwOTU5NTcjNTM3MTI3Mjc1IzUzNzE2MTI2OSMjNDNjOGM4MWEtYTE3ZC00ZTQ0LWI5Y2QtNjMxY2M5MTMzYzA1IzE1MmQwN2IxLWRhNDEtNGM0MC1hZDE4LWZlNzRjMjY5NTM0YSNveF9wcm90byM1MzcwNzMyMTl8bGQ9YW1hem9uLmNvLnVr",
+            "type":"html",
+            "ad_url":"<iframe src=\"http://aax-eu.amazon-adsystem.com/e/ox/impi?b=II_OSDI3eETroEmU2XKOwmEAAAFVxhsnzQMAAAUUJ0ggig&w=AAABVcYbKJPieDDltWUV2Gd474rd_qBMBUurMg&bi=St7yANgOQEJvZgQVZv0kDdFxRTvewJTahv.BdUsVG.WTFLziIrf4RpP7k.bE92d35L3XV1l4pe9uVl6nBzKzUkcpkWZ8zNYlD1pgBPULkCCqJr7cpesR.kfNkpkQeFaFBmrvHoUMGF1fjZiDoncJifOf58AfP.r8HFhE7C5T2Y.zzfMuBiYNe7Um1DjlChloat9BZFRA5WB0B.WpcL-am.rYDlt6HVXWCngr-YPI7RQGmGPt9rE.svI1nvyJNv35OimxPAOZt9LpfGyHp.cP1bqfWceU.8iUpboOlau8o7U9VU3NqixWSUIRmtR7xF.WzVrdxXud1sQZviB02RavGb3CDMv8jsMbGJsBhMy7aO2RGOvm25wfnMXlkWqJNQn3L3UfiPY2G5s1sUkbdaVIRTTkLiOABc-9JNY6Mq1cF-KsZu04ErE5kAcRy21T1Y0OLjQcWLvLvKRAU-CRMIeIRJos-HkOEtv-eEPZr0lMWpqc5DBxcvaUReRuyCang6n2Pd9yE1-UuRyYp0eMfSDddg__&s=300x600\" width=300 height=600 frameborder=0 marginwidth=0 marginheight=0 scrolling=\"no\"></iframe><iframe src=\"//aax-eu.amazon-adsystem.com/s/iu3?d=openx.com&cb=540357\" width=\"1\" height=\"1\" style=\"display:none\" frameborder=\"0\" marginwidth=\"0\" marginheight=\"0\"></iframe><script src=\"http://s.update.openx.com/2/413654/analytics.js?si=537210145&ti=ad5a6a20-ed46-4796-9c5f-3e2cca846ca6&pc=538229265&cb=3Vvxi34sMvnsL4-MW93Fp4Mnya&dt=4136541438897963103000\" async=\"true\"></script>\n"
+          }
+        ]
+      }
+    ]
+  }
+});

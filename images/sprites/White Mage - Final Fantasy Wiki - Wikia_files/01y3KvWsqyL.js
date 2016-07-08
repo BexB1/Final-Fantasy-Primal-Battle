@@ -1,0 +1,1 @@
+define("DisplayWatcher",[document,nut,"StyleUtils","EventUtils"],function(c,e,d,a){var b=c.getElementById("dra-html");a.waitForAllCustomEvents({events:["dra-callback-complete","dra-images-loaded"],callback:function(){b.className=d.removeClass("rendering",b.className);a.trigger("dra-creative-rendered",!0)}})});

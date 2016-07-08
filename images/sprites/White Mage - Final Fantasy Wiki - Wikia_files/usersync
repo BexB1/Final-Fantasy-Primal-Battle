@@ -1,0 +1,4 @@
+Execution of the expression "
+		payload = app.registry['usersync-api'].request(
+			message.inboundProperties['http.query.params'].p_id,message.inboundProperties['cookie'],message.inboundProperties['http.scheme']);
+		" failed. (org.mule.api.expression.ExpressionRuntimeException). Message payload is of type: NullPayload

@@ -1,0 +1,2 @@
+﻿var _qevents = _qevents || [];
+(function () { var d = document, e = d.createElement('script'), s = d.getElementsByTagName('script')[0]; e.src = (d.location.protocol === "https:" ? "https://secure" : "http://edge") + ".quantserve.com/quant.js"; e.async = true; e.type = "text/javascript"; s.parentNode.insertBefore(e, s); })(); _qevents.push({ qacct: "p-HGAVM7nQJ_sep" });

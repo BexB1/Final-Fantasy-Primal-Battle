@@ -1,0 +1,638 @@
+FLITE._.fliteCallback({"widgets":[{"appId":"b3ee0075-832f-440c-b916-6eaa472494bf","appWidth":"700","providerServiceLevel":"EXPERT","appHeight":"400","regPK":7322684,"stage":1,"appPK":"173940372","htmlContent":"","regPubVersion":"1","widgetPrototypeOrdinal":"17","configParams":{"theme":{"name":"theme","value":"{}"},"wbx.backupImage":{"name":"wbx.backupImage","value":"http://static.flite.com/screenshot/21e3db3a-6007-4747-a8dc-1baabe1913a9/e6585140-576a-4949-a067-9d385738c96e/screenshot.png"},"wbx.backupImageLink":{"name":"wbx.backupImageLink","value":""},"wbx.windowTarget":{"name":"wbx.windowTarget","value":""},"stage":{"valueMap":{"id":"S2556df4","height":"400","width":"700","label":"Inline Video","triggers":"[]"},"name":"stage","value":""},"wbx_at":{"name":"wbx_at","value":""},"assets":{"name":"assets","value":{},"type":"DEPENDENCY"},"wbx_lp":{"name":"wbx_lp","value":""},"layout":{"name":"layout","value":"[{\"id\":\"L333035bf\",\"label\":\"Playwire NEW\",\"x\":0,\"y\":0,\"borderThickness\":0,\"cornerRadius\":0,\"height\":\"400\",\"width\":\"700\",\"component\":\"333035bf\",\"triggers\":[{\"eventType\":\"mouseover\",\"paths\":[\"path_5fcbe4e2\",\"path_3edb54e5\"],\"duration\":\"2\"},{\"eventType\":\"mouseout\",\"paths\":[\"path_2b23f135\"]},{\"eventType\":\"component\",\"paths\":[\"path_7ff3da2d\"],\"payload\":\"AD_COMPLETE\"},{\"eventType\":\"component\",\"paths\":[\"path_0d615832\"],\"payload\":\"CONTENT_STARTED\"}]},{\"id\":\"L754c65c3\",\"label\":\"View\",\"x\":0,\"y\":0,\"borderThickness\":0,\"cornerRadius\":0,\"height\":\"400\",\"width\":\"700\",\"children\":{\"nodes\":[{\"x\":654,\"y\":14,\"width\":73,\"height\":74,\"scale\":1,\"rotation\":0,\"alpha\":1,\"id\":\"L967f725c\",\"label\":\"Close Button\",\"borderThickness\":0,\"cornerRadius\":0,\"component\":\"967f725c\",\"visibility\":\"hidden\",\"animations\":[{\"trigger\":\"visibilityshown\",\"type\":\"animate\",\"options\":{\"to\":{\"alpha\":1,\"scale\":1,\"x\":654,\"y\":14},\"from\":{\"alpha\":1,\"scale\":0,\"x\":654,\"y\":14},\"duration\":1,\"direction\":null,\"easing\":{\"ease\":\"easeInOut\",\"fn\":\"Scale\"}}},{\"trigger\":\"visibilityhidden\",\"type\":\"animate\",\"options\":{\"to\":{\"alpha\":1,\"scale\":0,\"x\":654,\"y\":14},\"from\":{\"alpha\":1,\"scale\":1,\"x\":654,\"y\":14},\"duration\":1,\"direction\":null,\"easing\":{\"ease\":\"easeInOut\",\"fn\":\"Scale\"}}}],\"parent\":\"L754c65c3\",\"type\":\"component\",\"thumbnail\":\"http://static.flite.com/6d53742c-22b1-455c-b13d-bb73fef80583/6c03b2ae-b7b6-457a-9994-40acd1f2422d/close_icon2.png\"},{\"x\":613,\"y\":0,\"width\":87,\"height\":79,\"scale\":1,\"rotation\":0,\"alpha\":1,\"id\":\"Lf871ac6e\",\"label\":\"Close\",\"borderThickness\":0,\"cornerRadius\":0,\"component\":\"f871ac6e\",\"triggers\":[{\"eventType\":\"tapclick\",\"paths\":[\"path_e13410f6\"]},{\"eventType\":\"tapclick\",\"paths\":[\"path_202b2fe4\"]}],\"parent\":\"L754c65c3\",\"type\":\"component\"}]}}]"},"wbx.zIndex":{"name":"wbx.zIndex","value":""},"components":{"name":"components","value":{"333035bf":{"guid":"dd8ba7f7-0a1b-4fc1-8ead-18a9fa7be821","dataSupport":true,"localConfig":{"use_config_url":"true","config_url":"//config.playwire.com/1004220/videos/v2/5025178/zeus.json","auto_play":"true","mute":"true"},"type":"REGISTRATION"},"967f725c":{"guid":"6fe1bac1-925a-429d-8255-20342b11f21d","assets":[],"dataSupport":true,"localConfig":{"asset_url":"http://static.flite.com/6d53742c-22b1-455c-b13d-bb73fef80583/6c03b2ae-b7b6-457a-9994-40acd1f2422d/close_icon2.png"},"type":"REGISTRATION"},"f871ac6e":{"guid":"670c1769-1ab1-428c-a356-e7776bc08fd8","localConfig":{},"type":"REGISTRATION"}},"type":"DEPENDENCY"},"actions":{"name":"actions","value":"{\"actions\":{\"action_67d3cf2f\":{\"type\":\"resize\",\"payload\":\"0\",\"options\":{\"duration\":\"\",\"width\":\"1\",\"height\":\"1\"}},\"action_c624c268\":{\"type\":\"closeself\"},\"action_978568a7\":{\"type\":\"delay\",\"payload\":\"2\",\"options\":{}},\"action_f952dff2\":{\"type\":\"target\",\"payload\":\"L333035bf\",\"options\":{\"fn\":\"unmuteVideo\"}},\"action_ee6921f3\":{\"payload\":\"L967f725c\",\"type\":\"changevisibility\",\"options\":{\"visible\":\"true\"}},\"action_6ba6a3e7\":{\"type\":\"target\",\"payload\":\"L333035bf\",\"options\":{\"fn\":\"muteVideo\"}},\"action_fa5cfba2\":{\"type\":\"closeself\"},\"action_554f50fe\":{\"type\":\"closeself\"},\"action_ba899dff\":{\"type\":\"delay\",\"payload\":\"10\",\"options\":{}}},\"paths\":{\"path_e13410f6\":[\"action_67d3cf2f\"],\"path_202b2fe4\":[\"action_978568a7\",\"action_c624c268\"],\"path_5fcbe4e2\":[\"action_f952dff2\"],\"path_3edb54e5\":[\"action_ba899dff\",\"action_ee6921f3\"],\"path_2b23f135\":[\"action_6ba6a3e7\"],\"path_7ff3da2d\":[\"action_fa5cfba2\"],\"path_0d615832\":[\"action_554f50fe\"]}}"},"css":{"valueMap":{},"name":"css","value":""}},"dependencies":["FIF","REPLACE","STAGES","VIEWABILITY"],"name":"Amazon Love film - 700x400 Inline Video - Preacher UK #1","regId":"c8a26a6d-1dad-4486-b106-88ac6ac1bb06","regWidth":"1","deviceCategory":1,"url":"http://asset.flite.com/html5/414.1018/touch/Ukitu.min.js","stages":{"sizes":[{"height":1,"width":1},{"height":400,"width":700}],"resources":["COMBO","CORE","BUTTON","EXPANDABLE","FLASH","TOUCH","LIGHTBOX","REMOTE","CHILD","MRAIDV1","LINKEDIN","FIF","AOL","MICROSOFT","YAHOO","TECHTARGET","SLIDE","PINNED","REPLACE","ADMOB","GOOGLE","USCRIPTFRAME","USCRIPTFRIENDLY","ALLFEATURES","CONTAINERSTYLE","STAGES","INITIALSCRIPT","INITIALLAYER","ATLASSERVER","MOPUB","REVIEWVIEW","VOLTRON","GLOBALMESSAGE","RESPONSIVE","CSSINHERITANCE","DATASTREAM","SAFEFRAME","ALLFLASHFEATURES","ATLASMETRICS","VIEWABILITY","EXTERNALDATA","NINTHDECIMAL","VPAIDV2","INPAGE","USCRIPTFRIENDLYEXT"],"urls":["http://s.flite.com/syndication/json/b/531219610/d/549789632512/dc/1/dh/9e7345d98f958ad60ebb47e7ae7a25de/i/b3ee0075-832f-440c-b916-6eaa472494bf/iv/1/r/c8a26a6d-1dad-4486-b106-88ac6ac1bb06/rv/5/s/0/t/8fca1d76f171c2782138979b5ec152d9e9efc23f00000155c267d96e/v/0/","http://s.flite.com/syndication/json/b/531219610/d/549789632512/dc/1/dh/9e7345d98f958ad60ebb47e7ae7a25de/i/b3ee0075-832f-440c-b916-6eaa472494bf/iv/1/r/c8a26a6d-1dad-4486-b106-88ac6ac1bb06/rv/5/s/1/t/8fca1d76f171c2782138979b5ec152d9e9efc23f00000155c267d96e/v/0/"]},"providerPK":1800573,"widgetPrototype":"AD_TOUCH","dependencyInfo":{"dd8ba7f7-0a1b-4fc1-8ead-18a9fa7be821":{"regWidth":"300","providerServiceLevel":"null","appWidth":"300","appHeight":"250","regPK":6197035,"deviceCategory":1,"stage":0,"stages":{"sizes":[],"resources":["COMBO","CORE","BUTTON","EXPANDABLE","FLASH","TOUCH","LIGHTBOX","REMOTE","CHILD","MRAIDV1","LINKEDIN","FIF","AOL","MICROSOFT","YAHOO","TECHTARGET","SLIDE","PINNED","REPLACE","ADMOB","GOOGLE","USCRIPTFRAME","USCRIPTFRIENDLY","ALLFEATURES","CONTAINERSTYLE","STAGES","INITIALSCRIPT","INITIALLAYER","ATLASSERVER","MOPUB","REVIEWVIEW","VOLTRON","GLOBALMESSAGE","RESPONSIVE","CSSINHERITANCE","DATASTREAM","SAFEFRAME","ALLFLASHFEATURES","ATLASMETRICS","VIEWABILITY","EXTERNALDATA","NINTHDECIMAL","VPAIDV2","INPAGE","USCRIPTFRIENDLYEXT"],"urls":[]},"appPK":"0","url":"","providerPK":1708627,"htmlContent":"","regPubVersion":"178","widgetPrototype":"AD_TOUCH_COMPONENT","widgetPrototypeOrdinal":"18","configParams":{"publisher_id":{"name":"publisher_id","value":"1010179"},"use_config_url":{"name":"use_config_url","value":"true"},"volume_level":{"name":"volume_level","value":""},"config_url":{"name":"config_url","value":"//config.playwire.com/1010179/videos/v2/4363378/zeus.json"},"auto_play":{"name":"auto_play","value":"false"},"wbx.customActions":{"name":"wbx.customActions","value":"[{\"label\":\"Pause\",\"fn\":\"pauseVideo\",\"haspayload\":false,\"payloadplaceholder\":\"\"},{\"label\":\"Play\",\"fn\":\"playVideo\",\"haspayload\":false,\"payloadplaceholder\":\"\"},{\"label\":\"Mute\",\"fn\":\"muteVideo\",\"haspayload\":false,\"payloadplaceholder\":\"\"},{\"label\":\"Unmute\",\"fn\":\"unmuteVideo\",\"haspayload\":false,\"payloadplaceholder\":\"\"}]"},"video_id":{"name":"video_id","value":"4363378"},"wbx.customTriggers":{"name":"wbx.customTriggers","value":"[{\"label\":\"Ad Started\",\"fn\":\"AD_STARTED\"},{\"label\":\"Ad Complete\",\"fn\":\"AD_COMPLETE\"},{\"label\":\"Content Started\",\"fn\":\"CONTENT_STARTED\"},{\"label\":\"Content Complete\",\"fn\":\"CONTENT_COMPLETE\"}]"},"mute":{"name":"mute","value":"false"}},"regVersion":"358","widgetType":"JS","dependencies":["FIF","REPLACE","STAGES","VIEWABILITY"],"appVersion":"null","name":"Playwire Bolt BETA","regHeight":"250","isRenderedInline":true,"regId":"dd8ba7f7-0a1b-4fc1-8ead-18a9fa7be821"},"6fe1bac1-925a-429d-8255-20342b11f21d":{"regWidth":"300","providerServiceLevel":"null","appWidth":"300","appHeight":"250","regPK":5664373,"deviceCategory":1,"stage":0,"stages":{"sizes":[],"resources":["COMBO","CORE","BUTTON","EXPANDABLE","FLASH","TOUCH","LIGHTBOX","REMOTE","CHILD","MRAIDV1","LINKEDIN","FIF","AOL","MICROSOFT","YAHOO","TECHTARGET","SLIDE","PINNED","REPLACE","ADMOB","GOOGLE","USCRIPTFRAME","USCRIPTFRIENDLY","ALLFEATURES","CONTAINERSTYLE","STAGES","INITIALSCRIPT","INITIALLAYER","ATLASSERVER","MOPUB","REVIEWVIEW","VOLTRON","GLOBALMESSAGE","RESPONSIVE","CSSINHERITANCE","DATASTREAM","SAFEFRAME","ALLFLASHFEATURES","ATLASMETRICS","VIEWABILITY","EXTERNALDATA","NINTHDECIMAL","VPAIDV2","INPAGE","USCRIPTFRIENDLYEXT"],"urls":[]},"appPK":"0","url":"","providerPK":2216990,"htmlContent":"","regPubVersion":"50","widgetPrototype":"AD_TOUCH_COMPONENT","widgetPrototypeOrdinal":"18","configParams":{"scale":{"name":"scale","value":"100"},"repeat_mode":{"name":"repeat_mode","value":"no-repeat"},"image_loss":{"name":"image_loss","value":"lossless"},"position_h_up":{"name":"position_h_up","value":"center"},"image_quality":{"name":"image_quality","value":"70"},"position_h":{"name":"position_h","value":"left"},"position_v_up":{"name":"position_v_up","value":"center"},"wbx_thumb":{"name":"wbx_thumb","value":"${asset_url}"},"retina":{"name":"retina","value":"DOWNSCALE"},"spinner":{"name":"spinner","value":"false"},"wbx.buttonMode":{"name":"wbx.buttonMode","value":"0"},"position_v":{"name":"position_v","value":"top"},"wbx.customTriggers":{"name":"wbx.customTriggers","value":"[{\"label\":\"Load Complete\",\"fn\":\"image_complete\"}]"},"asset_url":{"name":"asset_url","value":"http://static.flite.com/54be77bf-e7db-4cfc-a678-7f50bc75b370/42284fca-428f-487b-82a2-20165632897d/no-image-300x2501x.png"},"upscale":{"name":"upscale","value":"false"},"scale_mode":{"name":"scale_mode","value":"DOWNSCALE"}},"regVersion":"107","widgetType":"HTML","dependencies":["FIF","REPLACE","STAGES","VIEWABILITY"],"appVersion":"null","name":"Image","regHeight":"250","isRenderedInline":true,"regId":"6fe1bac1-925a-429d-8255-20342b11f21d"},"670c1769-1ab1-428c-a356-e7776bc08fd8":{"regWidth":"50","providerServiceLevel":"null","appWidth":"50","appHeight":"50","regPK":6047419,"deviceCategory":1,"stage":0,"stages":{"sizes":[],"resources":["COMBO","CORE","BUTTON","EXPANDABLE","FLASH","TOUCH","LIGHTBOX","REMOTE","CHILD","MRAIDV1","LINKEDIN","FIF","AOL","MICROSOFT","YAHOO","TECHTARGET","SLIDE","PINNED","REPLACE","ADMOB","GOOGLE","USCRIPTFRAME","USCRIPTFRIENDLY","ALLFEATURES","CONTAINERSTYLE","STAGES","INITIALSCRIPT","INITIALLAYER","ATLASSERVER","MOPUB","REVIEWVIEW","VOLTRON","GLOBALMESSAGE","RESPONSIVE","CSSINHERITANCE","DATASTREAM","SAFEFRAME","ALLFLASHFEATURES","ATLASMETRICS","VIEWABILITY","EXTERNALDATA","NINTHDECIMAL","VPAIDV2","INPAGE","USCRIPTFRIENDLYEXT"],"urls":[]},"appPK":"0","url":"","providerPK":2216990,"htmlContent":"","regPubVersion":"19","widgetPrototype":"AD_TOUCH_COMPONENT","widgetPrototypeOrdinal":"18","configParams":{"color":{"name":"color","value":"#00ffff"}},"regVersion":"47","widgetType":"JS","dependencies":["FIF","REPLACE","STAGES","VIEWABILITY"],"appVersion":"null","name":"Hotspot","regHeight":"50","isRenderedInline":true,"regId":"670c1769-1ab1-428c-a356-e7776bc08fd8"}},"regVersion":"5","widgetType":"JS","appVersion":"1","regHeight":"1"}],"token":"8fca1d76f171c2782138979b5ec152d9e9efc23f00000155c267d96e","version":"531219610", "dependencies": [function(F) {F.ChildMetrics={logCloseInteraction:function(a,b){var c={subtype:F.MetricsConstants.EventSubtypes.INTERACTION_SELECT,mode:F.MetricsConstants.EventModes.CLICK,detail:"Close"},d=F.Metrics.logInteraction(a,F._.extend(c,b)),e=F.MetricsConstants.Keys.SCOPE in b?b[F.MetricsConstants.Keys.SCOPE]:null,f=e?"Stage Closed":"Subsequent ad closed";return a.trigger("metrics:logNotation",F._.extend(b,{trigger:d,detail:b&&b.notation_detail||f})),a.metrics.sequence-1},logImpression:function(a,b){var c={};c.subtype=F.MetricsConstants.EventSubtypes.CONTENT_VIEW,b=b||{};var d="Subsequent ad loaded",e=F.MetricsConstants.Keys.SCOPE in b?b[F.MetricsConstants.Keys.SCOPE]:null,f="expandType"in b?b.expandType:null;return e&&(d="expand"===f?"Stage Expand":"slide"===f?"Stage Slide":"lightbox"===f?"Stage Lightbox":"pushdown"===f?"Stage Pushdown":"self"===f?"Stage Switch":"Stage Loaded"),c.detail=d,c.trigger=a.metrics.trigger||a.impressionSequence,F.Metrics.logContent(a,F._.extend(b,c))}},F.ReplaceViewMixin={events:{replaceStart:"replace"},replace:function(a){a=a||{};var b=this,c=b.model.previous;if(c){c.view.initPartnerChildView&&c.view.initPartnerChildView(b,a),this.containerChain=c.view.containerChain,F._.is.inConsole()?(c.view.target.style.overflow="hidden",c.view.target.style.position="relative",c.view.target.style.width=c.config.appWidth+"px",c.view.target.style.height=c.config.appHeight+"px"):F._.createNamespaceInWindow(F._.getExpandableWindow(),{sessionId:b.model.sessionId});var d=c.view.dom.offsetWidth,e=c.view.preloader?c.view.preloader.firstChild.offsetWidth:0,f="pushdown"===a.type,g=function(){if(f){if(F._.is.truly(a.hideStage)){var d="0.1px";c.view.dom&&(c.view.dom.style.width=d),c.view.preloader&&(c.view.preloader.firstChild.style.width=d)}}else{var e={preserveTarget:!0,trigger:b.model.metrics.trigger},g=b.replaceViewOptions||{};b.parent!==b.previous&&b.model.bind("destroy",function(){c.destroy()}),e=F._.extend(e,g),c.view.destroy(e)}},h=F._.is.truly(a.resize),i=F._.getExpandableWindow()===(b.target&&b.target.ownerDocument.defaultView),j=!i||F._.is.inConsole();if(f){var k=b.getExpandableAnchorInsertionPoint(),l=k&&"bottom"===k.style.verticalAlign;j&&(l&&(b.bind("beforeResizeContainer",function(){k.style.verticalAlign=""}),b.bind("resizeContainer",function(){k.style.verticalAlign="bottom"})),a.resizeWidth=parseInt(b.model.config.appWidth,10),a.resizeHeight=parseInt(b.model.config.appHeight,10),c.view.resizeContainer(c.config.appWidth,c.config.appHeight,a)),h||this.bind("resizeContainer",F._.once(g)),this.preventDomRemoval=!0,this.model.bind("destroy",function(){b.target.removeChild(b.dom),a.onDestroyFn&&a.onDestroyFn(b),c.view.dom.style.width=d+"px",c.view.preloader&&(c.view.preloader.firstChild.style.width=e+"px"),c.pushDownInstance=null})}(!f||h)&&b.bind("show",F._.once(function(){j?b.resizeContainer(b.model.config.appWidth,b.model.config.appHeight,a):(b.target.style.height=b.model.config.appHeight+"px",b.target.offsetWidth<b.model.config.appWidth&&(b.target.style.width=b.model.config.appWidth+"px")),setTimeout(g,250)})),b.show(),c.view.closeButton||(a.hideClose=!0),b.trigger("replace",a)}}},this.viewMixins||(this.viewMixins={}),this.viewMixins.ReplaceViewMixin="ReplaceViewMixin";},function(F) {"undefined"==typeof F&&(F={});var testDomain,updateDocumentDomain=function(){var a=F._.getExpandableWindow(),b=function(){return a!==window.top&&a!==window?a:window.top};testDomain=function(){try{if((b().document||b().document.domain)&&b().document.location.href)return!0}catch(a){return!1}return!0};var c=function(){var a=document.domain.split(".");a&&a.length>0&&(a.shift(),document.domain=a.join("."))};try{testDomain()||(document.domain=document.domain,testDomain()||(c(),testDomain()||(c(),testDomain()||(window.FLITE.inFIF=!1))))}catch(d){window.FLITE.inFIF=!1}},pollDocumentDomain=function(a){var b=F._.watch(testDomain,updateDocumentDomain,100);a.bind("destroy",function(){clearInterval(b)}),setTimeout(function(){clearInterval(b)},1e4)},watchDocumentDomain=function(a){if(window.FLITE.inFIF&&window!==top){if(window.postMessage){var b=function(a,b){var c=F._.make("script",{doc:a,attributes:{id:"dd-"+top.FLITE_DD.key}});c.text="("+b.toString()+")();var flite_s=document.getElementById('dd-"+top.FLITE_DD.key+"');if(flite_s)document.body.removeChild(flite_s);",a.body.appendChild(c)};try{if(!top.FLITE_DD){top.FLITE_DD={wins:[],key:+new Date+Math.floor(1e5*Math.random()),domain:top.document.domain,i:null};var c=function(){var a,b=document,c=window.FLITE_DD,d="domain";c.i=setInterval(function(){if(b[d]!==c[d])for(c[d]=b[d],a=0;a<c.wins.length;a++)c.wins[a]!==window&&(c.wins[a].postMessage({dd:c[d],dk:c.key},"*"),clearInterval(c.i))},250)};b(top.document,c)}var d=function(){var a=window,b=document;if(!a.FLITE_DD){a.FLITE_DD={key:top.FLITE_DD.key,cb:function(c){c.data.dk===a.FLITE_DD.key&&c.data.dd&&(b.domain=c.data.dd,a.F&&a.F._&&(a.F._.expandWindow=null))}};var c="message";a.addEventListener?a.addEventListener(c,a.FLITE_DD.cb):a.attachEvent("on"+c,a.FLITE_DD.cb)}},e=F._.getWindowChain();return F._.each(e,function(a){a!==top&&a!==parent&&b(a.document,d)}),void(top.FLITE_DD.wins=F._.unique(top.FLITE_DD.wins.concat(e)))}catch(f){}}pollDocumentDomain(a)}};F.FifInstanceMixin={isFifInstance:!0,setConfigFromQueryString:function(a){a=a||window.location.href;var b=F._.fromQueryString(a),c="false"===b.f;window.FLITE.inFIF=F._.is.fif()&&!c,window.FLITE.inFIF&&(updateDocumentDomain(),watchDocumentDomain(this)),this.expansionDisabled=!window.FLITE.inFIF;var d=this.guid,e={};if(window.FLITE.config=window.FLITE.config||{},window.FLITE.config[d]=window.FLITE.config[d]||{},!window.FLITE.safeFrame){var f,g={},h=function(a){0===f.indexOf(a+".")&&(g[a]=g[a]||{},g[a][f.substr(a.length+1)]=b[f])};for(var i in b)b.hasOwnProperty(i)&&(f=i,F._.each(["ed","pd","cd","vd","cvd"],h));b.p&&(e.ct=b.p),b.oob&&(e.oob=b.oob),b.at&&(e.at=b.at),b.cb&&(e.cb=b.cb),b.ts&&(e.ts=b.ts),e=F._.extend(e,g),g.vd&&(window.FLITE.config[d].vd=window.FLITE.config[d].vd||{},this.setConfigParamOverrides(F._.prefix(F._.extend(window.FLITE.config[d].vd,g.vd),"var_")),F._.extend(this.config.configParams,this.configParamOverrides),this.configParamOverrides=null)}window.FLITE.config[d]=F._.defaults(F._.extend(window.FLITE.config[d],e),{expansionDisabled:this.expansionDisabled})}};},function(F) {var includedDependencies=function(a,b){var c=[];if(null!==b){var d=b.toString(2).split("").reverse();F._.each(a,function(a,b){parseInt(d[b],2)&&c.push(a)})}return c},getBitVector=function(a,b){var c=[];null!==b&&b.length>0&&F._.each(a,function(a){c.unshift(F._.indexOf(b,a)>-1?1:0)});var d=c.join("")||"0";return parseInt(d,2)},attachChildMetrics=function(a,b,c,d){var e=[{evt:"metrics:logInteraction",fn:"logInteraction"},{evt:"metrics:logContent",fn:"logContent"},{evt:"metrics:logNotation",fn:"logNotation"},{evt:"metrics:logVideo",fn:"logNotation"}];return b.bind("metrics:impression",function(e){var f={};f[c]=d,b.expandType&&(f.expandType=b.expandType),F.ChildMetrics&&(b.impressionSequence=F.ChildMetrics.logImpression(a,F._.extend(e,f)))}),b.bind("metrics:logCloseInteraction",function(e){var f={};f[c]=d,b.expandType&&(f.expandType=b.expandType),F.ChildMetrics&&F.ChildMetrics.logCloseInteraction(a,F._.extend(e,f))}),F._.each(e,function(e){b.bind(e.evt,function(b){var f={};f[c]=d,F.Metrics[e.fn](a,F._.extend(b,f))})}),b},showStageFunc=function(a){var b=function(b){if(!b||b.expansionDisabled||!b.getConfig().stages)return!1;if(b.children&&b.children[b.guid]){var c=F._.detect(b.children[b.guid],function(b){return b.stage===a.stage});if(c)return!1}return!0},c=function(a,b){var c=F.createChildInstance(a,a.guid);return c.stage=b.stage,c.expandType=b.type,a.view&&(c.anchorInsertionPointOverride=a.view.getExpandableAnchorInsertionPoint(F._.extend(b,{clear:!0}))),c},d=function(a,b,c){var d=buildStageUrl(a,c.stage,c);F._.jsonpWidgetInfo(d,{},b,c.stage,function(d){b.setConfig(d.widgets[0],d.dependencies,d.scriptDependencies);var e=b.getConfigValue("stage");attachChildMetrics(a,b,F.MetricsConstants.Keys.SCOPE,e.id),b.bind("viewReady",function(){b.view.trigger("expandStart",c)});var f=F._.getExpandableWindow().document,g=F._.make("div",{doc:f});b.render(g)})};return F.childFactory.call(this,b,c,d,a)},buildStageUrl=function(a,b,c){var d=a.getConfig().stages.urls,e=a.getConfig().stages.resources;return a&&a.view&&a.view.getStageUrl(e,d[b],c)},replaceStage=function(a,b){if(!b||!b.getConfig().stages||b.pushDownInstance)return!1;a=a||{};var c=F.createChildInstance(b.parent||b,b.guid);c.sessionId=b.sessionId,c.metrics=b.metrics,c.stage=a.stage,c.expandType=a.type,c.previous=b,a.config&&c.setConfigParamOverrides(a.config),a.trigger&&(c.metrics.trigger=a.trigger);var d=buildStageUrl(b,c.stage,a);"pushdown"===a.type&&(b.pushDownInstance=c),F._.jsonpWidgetInfo(d,{},c,c.stage,function(d){c.setConfig(d.widgets[0],d.dependencies,d.scriptDependencies),attachChildMetrics(b.parent||b,c,F.MetricsConstants.Keys.SCOPE,c.getConfigValue("stage").id),c.bind("viewReady",function(){c.view.trigger("replaceStart",a)});var e=b.view.target.ownerDocument,f=F._.make("div",{doc:e}),g=b.view.target.parentNode||b.view.targetParent;g.insertBefore(f,b.view.target),c.render(b.view.target,{preserveTarget:!0,replaceStage:!0})})};F.StagesMixin={events:{showStage:"doShowStageCallback"},attachChildMetrics:attachChildMetrics,doShowStageCallback:function(a,b){if(!F.AdMobViewMixin){var c=b.baseParent||b;"self"===a.type||"pushdown"===a.type?!b.parent&&c.replaceStageOverride?c.replaceStageOverride(a,b):replaceStage.call(this,a,b):c.showStageOverride?c.showStageOverride(a,b):showStageFunc.call(this,a,b)||b.trigger("metrics:logNotation",{trigger:a.trigger,detail:"Expansion Blocked"})}},getStageUrl:function(a,b,c){var d=b.match(/(\/d\/)([0-9]*)/),e=[];if(d&&3===d.length){var f=parseInt(d[2],10);e=includedDependencies(a,f)}var g=function(a){F._.each(["LIGHTBOX","EXPANDABLE","SLIDE"],function(b){var c=F._.indexOf(a,b);c>=0&&a.splice(c,1)})};if(F._.contains(["anchor","expand"],c.type))g(e),e=F._.union(e,["EXPANDABLE","BUTTON","CHILD"]);else if(F._.contains(["lightbox","slide"],c.type))g(e),e=F._.union(e,[c.type.toUpperCase(),"BUTTON","CHILD"]);else if(F._.contains(["pushdown","self"],c.type)){var h=["REPLACE"];this.model.viewMixins.PinnedViewMixin&&h.push("PINNED"),e=F._.union(e,h)}var i=getBitVector(a,e);return d?(b=[F.URLS.runtimeCdn,"/json",b.substring(b.indexOf("/",F.URLS.runtimeCdn.length+1),b.length)].join(""),b=b.replace(/(\/d\/)([0-9]*)/,"/d/"+i)):(b=b.substring(b.indexOf("/",F.URLS.runtimeCdn.length+1),b.length),b=[F.URLS.runtimeCdn,"/json",b,"/d/",i].join("")),b}},this.viewMixins||(this.viewMixins={}),this.viewMixins.StagesMixin="StagesMixin";},function(F) {function processURL(a){return a=a&&window&&window.location&&"https:"===window.location.protocol?a.replace("http:","https:"):a,a&&F._.toQueryString({cb:F.version},a)}F.NodeUtils={getComputedStyle:function(a,b){if(!a||!b)return"";if(window.getComputedStyle&&a.ownerDocument&&a.ownerDocument.defaultView){var c=a.ownerDocument.defaultView.getComputedStyle(a,null);return c?c.getPropertyValue(b):""}var d=/(\-([a-z]){1})/g;return"float"===b&&(b="styleFloat"),d.test(b)&&(b=b.replace(d,function(){return arguments[2].toUpperCase()})),a.currentStyle&&a.currentStyle[b]?a.currentStyle[b]:null},detectParentStyleProperty:function(a,b){if(!a||!b)return!1;for(var c=100,d=a.nodeName.toLowerCase(),e=function(a){return F._.any(b,function(b){return b.value===F.NodeUtils.getComputedStyle(a,b.name)})};a&&"body"!==d&&"head"!==d&&"document"!==d&&c>0;){if(e(a))return a;a=a.parentNode,d=a&&a.nodeName.toLowerCase(),c-=1}if(F._.is.fif())try{var f=a.ownerDocument,g=f&&(f.defaultView||f.parentWindow);if(g&&g.frameElement)return this.detectParentStyleProperty(g.frameElement,b)}catch(h){return null}return null}},F.IFrameUtils={getIframe:function(a,b){var c=["javascript",":"].join("");b=b||document.getElementsByTagName("body")[0];var d=b.ownerDocument.createElement("iframe");d.setAttribute("frameBorder","0"),d.setAttribute("scrolling","no"),d.setAttribute("seamless","seamless"),d.setAttribute("allowTransparency","true"),d.setAttribute("allowfullscreen","allowfullscreen"),b=b||document.getElementsByTagName("body")[0],b.appendChild(d),setTimeout(function(){d.src=c+"false";var b,e;try{b=d.contentWindow.document}catch(f){e=document.domain;var g="var d=document.open();d.domain='"+e+"';void(0);";d.src=c+g,b=d.contentWindow.document}b.open()._l=function(){var b=this,c=b.parentWindow||b.defaultView;a.call(null,d,b,c)},b.write('<!DOCTYPE html><body style="margin:0px;padding:0px;border:none;" onload="document._l();"></body>'),b.close()},30)}},F.ScriptHelper=F.Base.extend({scripts:{},callbacks:{},callbackFns:{},windows:{},windowCallbacks:{},containerNode:null,handlerId:null,handlerCallback:null,constructor:function(a){this.containerNode=a||document.getElementsByTagName("body")[0],F._.defaults(FLITE,{scriptHandlers:{}}),this.windows={},this.handlerId="js_"+F._.keys(FLITE.scriptHandlers).length,FLITE.scriptHandlers[this.handlerId]={callbackFns:{}},this.handlerCallback=["FLITE.scriptHandlers.",this.handlerId,".callbackFns"].join("")},loadScript:function(a,b){var c=this;c._doPreloadScript(a,b,c.callbacks,c.scripts,function(a,b,d){c._doLoadScript(a,b,d)})},loadWindowedScript:function(a,b){var c=this;c._doPreloadScript(a,b,c.windowCallbacks,c.windows,c._doLoadWindowedScript)},loadUncachedScript:function(a,b,c){a&&this._doLoadScript(a,b,c)},getCallbackName:function(a){var b=FLITE.scriptHandlers[this.handlerId],c="cb"+F._.keys(b.callbackFns).length;return b.callbackFns[c]=a,[this.handlerCallback,c].join(".")},isScriptLoaded:function(a){return this.scripts[a]},_doPreloadScript:function(a,b,c,d,e){var f=this;if(d[a])try{b.call(null,d[a])}catch(g){}else"undefined"==typeof c[a]&&(c[a]=[]),c[a].push(b),"undefined"==typeof d[a]&&(d[a]=0,e.call(f,a,function(b){f._runCallbacks(a,c,d,b)}))},_doLoadScript:function(a,b,c){var d=document.createElement("script");d.setAttribute("type","text/javascript"),d.setAttribute("async","async"),"function"==typeof b&&(d.onload=b),"function"==typeof c&&(d.onerror=c),d.setAttribute("src",a),this.containerNode.appendChild(d)},_doLoadWindowedScript:function(a,b,c){var d=this;F.IFrameUtils.getIframe(function(d,e,f){d.width=1,d.height=1;var g=e.createElement("script");"function"==typeof b&&(g.onload=function(){b.call(null,f)}),"function"==typeof c&&(g.onerror=function(){c.call(null,f)}),g.src=a;var h=e.getElementsByTagName("body")[0];h.appendChild(g)},d.containerNode)},_runCallbacks:function(a,b,c,d){d=d||a,c[a]=d;var e=b[a];e&&(F._.each(e,function(b){try{b.call(null,c[a])}catch(d){}},this),b[a]=[])}}),F.TouchView=F.AbstractView.extend({constructor:function(a){F.AbstractView.prototype.constructor.call(this,a)},renderTo:function(a,b){b=b||{};var c=this;b.preserveTarget||F._.clear(a),c.target=a,c.targetParent=c.target.parentNode;var d=c.target.ownerDocument||document,e=d.createElement("iframe");return e.height=c.model.getConfig().appHeight,e.width=c.model.getConfig().appWidth,e.style.border="0px",e.scrolling="no",e.seamless="seamless",e.frameBorder="0",e.allowTransparency="true",e.className="flite-ad",e.setAttribute("allowfullscreen","allowfullscreen"),c.target.appendChild(e),c.dom=e,c.repositionViewDom(a,b),c.model.stage&&c.model.stage>0&&FLITE.resizeToFitAd&&FLITE.resizeToFitAd(c.model.uniqueId),c},appendFragment:function(){var a,b,c=this,d="script",e="text/javascript",f=c.dom;f.src="javascript:false",F._.extend((f.frameElement||f).style,{height:c.model.getConfig().appHeight,width:c.model.getConfig().appWidth,border:"0",display:"inline-block"},c.model.getConfig().appHeight<=5?{verticalAlign:"top"}:{});try{b=f.contentWindow.document}catch(g){a=document.domain,f.src="javascript:var d=document.open();d.domain='"+a+"';void(0);",b=f.contentWindow.document}var h=window.FLITE;b.open()._l=function(){var b=this,f=b.parentWindow||b.defaultView;f.FLITE=h,f.F=F,f.FLITE.NodeUtils=F.NodeUtils;var g="flite-"+F._.uniqueId(),i=function(){var a=b.createElement(d);a.type=e,a.text=['var ukitu=new window.Ukitu({instance:FLITE.getInstanceByUniqueId("'+c.model.uniqueId+'"), stage:document.getElementById("'+g+'")}); ukitu.init().then(function(){ukitu.render({x:0, y:0, width:',c.model.getConfig().appWidth,",height:",c.model.getConfig().appHeight,"})});"].join(""),b.body.appendChild(a)},j=b.createElement(d);if(a&&(b.domain=a),j.id="ukitu",j.type=e,j.addEventListener)j.addEventListener("load",i,!1);else if(j.readyState){var k=!1;j.onreadystatechange=function(){k||"loaded"!=this.readyState&&"complete"!=this.readyState||(k=!0,i())}}j.src=processURL(c.model.getConfig().url),F._.is.platform.ios||F._.is.platform.android||c.getHoverTracker(c.dom,{moveElement:b.body}),b.body.style.padding="0",b.body.style.margin="0";var l=b.createElement("div");l.id=g,b.body.appendChild(l),b.body.appendChild(j),c.trigger("domReady")},b.write('<!DOCTYPE html><body style="margin:0px;padding:0px;" onload="document._l();"></body>'),b.close()},openWindow:function(a,b,c){var d=this,e=document.createElement("a");e.setAttribute("href",a),e.setAttribute("target",b);var f=navigator.userAgent.match(/Android (\d+(?:\.\d+)+)/i),g=f&&2==f.length&&"2"==f[1].charAt(0),h=this.model.baseParent||this.model,i=h.getConfig()&&h.getConfig().oob;if(i&&F.Metrics.loadImageTrackingUrl(i,{},!0),F._.is.platform.ios||0===a.indexOf("tel:")||0===a.indexOf("sms:")||0===a.indexOf("mailto:"))e.click(),d.trigger("openWindow",{url:a,target:b,specs:c});else if(g){var j=document.createEvent("HTMLEvents");j.initEvent("click",!0,!0),e.dispatchEvent(j),d.trigger("openWindow",{url:a,target:b,specs:c})}else F.TouchView.__super__.openWindow.call(this,a,b,c)}}),"undefined"==typeof F&&(F={}),F.BackupImageView=F.AbstractView.extend({isBackupImage:!0,constructor:function(a){F.AbstractView.prototype.constructor.call(this,a)},renderTo:function(a){var b=this,c=b.config.width,d=b.config.height,e=b.model.getAllVariablesMap(),f=F._.variableReplacement(b.model.getConfigValue("wbx.backupImageLink")||"",e),g=F._.variableReplacement(b.model.getConfigValue("wbx.backupImage")||"",e);g&&(g=F.URLFactory.getProxiedImageUrl(g,{maxWidth:c,maxHeight:d})),b.dom=F._.make("div");var h=F._.make("img",{attributes:{src:g,height:d,width:c,border:0}});b.dom.appendChild(h),a.innerHTML=F._.toElementString(b.dom);var i=a.firstChild;if(i.firstChild.onload=function(){b.trigger("renderComplete",b)},b.getHoverTracker(i),f){var j=F._.is.browser.msie?"mouseup":F._.is.browser.mozilla||F._.is.browser.safari?"click":"mousedown";b.clickthroughFn=function(){var a=b.model.getConfig()&&b.model.getConfig().oob;a&&F.Metrics.loadImageTrackingUrl(a,{},!0),f&&b.doClickThrough(f,"Backup Image")},i.style.cursor="pointer",F._.addEvent(i,j,b.clickthroughFn)}return b.stylePinned&&b.stylePinned(a),b}}),"undefined"==typeof F&&(F={}),F.TouchInstanceMixin={events:{renderReady:"renderTouch",targetReady:"appendFragment"},supports:{mraid:!1,admob:!1,vpaid:!1},asyncDependencies:{},renderTouch:function(a,b){var c=this;b=b||{},F.VPAIDInterface&&(c.supports.vpaid=F.VPAIDInterface.getInterface(c));for(var d=F._.getWindowChain(),e=0;e<d.length;e++)try{if(d[e].mraid){c.supports.mraid=d[e].mraid;break}if(d[e].admob){window.admob=d[e].admob,c.supports.admob=!0;break}}catch(f){}var g=!F._.is.browser.webkit&&!F._.is.platform.ios&&(!F._.is.browser.msie||F._.is.browser.msie&&F._.is.browser.version<9)&&(!F._.is.browser.mozilla||F._.is.browser.mozilla&&F._.is.browser.version<15&&!("transition"in window.document.body.style)&&!("transform"in window.document.body.style))||c.expansionDisabled&&F._.is.truly(c.getConfigValue("wbx.backupImgExpandFallback"))||!("addEventListener"in window);if(g&&!F._.is.truly(c.scalingReq))return c.trigger("viewInit",{subtype:F.MetricsConstants.EventSubtypes.IMPRESSION_BACKUP}),c.view=new F.BackupImageView({model:c,width:c.config.appWidth,height:c.config.appHeight}).renderTo(a),void c.trigger("viewReady");if(c.supports.admob){var h=c.getConfigValue("stage");h&&h.id&&c.getConfig().stage>0&&(c.unbindPrefix("metrics"),F.StagesMixin.attachChildMetrics(c,c,F.MetricsConstants.Keys.SCOPE,h.id));var i=window.FLITE.config&&window.FLITE.config[c.guid]&&window.FLITE.config[c.guid].mixin&&window.FLITE.config[c.guid].mixin[c.getConfig().widgetPrototype]&&window.FLITE.config[c.guid].mixin[c.getConfig().widgetPrototype].admob;if(!admob.opener.isOverlayShowing()&&i&&i.interstitial)return void window.admob.events.addEventListener("onshow",function(){c.trigger("viewInit"),c.assembleView(a,b)})}else if(c.supports.mraid){var j=function(d){d&&(c.trigger("viewInit"),c.assembleView(a,b)),c.supports.mraid.removeEventListener("viewableChange",j)};if(!c.supports.mraid.isViewable()&&"expanded"!=c.supports.mraid.getState())return void c.supports.mraid.addEventListener("viewableChange",j)}else if(c.supports.vpaid&&!c.supports.vpaid._hasStarted()){var k=function(){c.unbind("vpaid.initAd",k),c.trigger("viewInit"),c.assembleView(a,b)};return void c.bind("vpaid.initAd",k)}c.trigger("viewInit"),c.assembleView(a,b)},assembleView:function(a,b){var c=this,d=c.getConfigValue("components");if(d){var e=F._.keys(d);F._.each(c.scriptDeps,function(a,b){for(var c=0,f=e.length;f>c;c++){var g=d[e[c]];g.guid===b&&(g.info.scriptContent=a)}})}var f=function(a){delete c.asyncDependencies[a]};c.bind("asyncInit",function(a,b){c.asyncDependencies[a]=1,b&&setTimeout(function(){f(a)},5e3)}),c.bind("asyncComplete",f),c.view=new F.TouchView({model:this});var g=function(){0===F._.keys(c.asyncDependencies).length?c.trigger("render",c.view,b):setTimeout(g,10)};c.view.bound("platformMixinSetup")?(c.view.bind("platformMixinReady",function(){g()}),c.view.trigger("platformMixinSetup")):g()},appendFragment:function(){this.view.appendFragment()}};},function(F) {F.DomUtils={getViewportHeight:function(a){a||(a=document);var b=-1,c=a.compatMode;return b=!c&&!F._.is.browser.msie||F._.is.browser.opera?window.innerHeight?window.innerHeight:0:"CSS1Compat"===c?a.documentElement.clientHeight:a.body.clientHeight},getViewportWidth:function(a){a||(a=document);var b=-1,c=a.compatMode;return b=c||F._.is.browser.msie?"CSS1Compat"===c?a.documentElement.clientWidth:a.body.clientWidth:window.innerWidth?window.innerWidth:0},getDocumentHeight:function(a){return a=a||document,Math.max(Math.max(a.body.scrollHeight,a.documentElement.scrollHeight),Math.max(a.body.offsetHeight,a.documentElement.offsetHeight),Math.max(a.body.clientHeight,a.documentElement.clientHeight))},getDocumentWidth:function(a){return a=a||document,Math.max(Math.max(a.body.scrollWidth,a.documentElement.scrollWidth),Math.max(a.body.offsetWidth,a.documentElement.offsetWidth),Math.max(a.body.clientWidth,a.documentElement.clientWidth))}};var getScrollX=function(a){a=a||window;var b=a?a.pageXOffset:0;return Math.max(a.document.documentElement.scrollLeft,a.document.body.scrollLeft,b)},getScrollY=function(a){a=a||window;var b=a?a.pageYOffset:0;return Math.max(a.document.documentElement.scrollTop,a.document.body.scrollTop,b)},getWebPageScrollMetrics=function(a,b){a=a||window;var c=b.getBoundingClientRect(),d=F.DomUtils.getViewportHeight(a.document),e=F.DomUtils.getViewportWidth(a.document),f=c.left+c.width,g=c.top+c.height;return{viewportWidth:e,viewportHeight:d,viewportXPixels:f,viewportYPixels:g}},getMRAIDPageScrollMetrics=function(a,b){var c=b&&b.getScreenSize&&b.getScreenSize(),d=c&&c.width||F.DomUtils.getViewportWidth(a.document),e=c&&c.height||F.DomUtils.getViewportHeight(a.document);return{viewportWidth:d,viewportHeight:e,viewportXPixels:b&&b.isViewable()?0:1e5,viewportYPixels:b&&b.isViewable()?0:1e5}},getWebViewableMetrics=function(a,b){a=a||window;var c=b.getBoundingClientRect(),d=F.DomUtils.getViewportWidth(a.document),e=F.DomUtils.getViewportHeight(a.document),f=Math.max(c.top,0),g=Math.min(e,c.bottom),h=isHidden()?0:g-f,i=0>=h?0:h/c.height,j=Math.max(c.left,0),k=Math.min(d,c.right),l=isHidden()?0:k-j,m=0>=l?0:l/c.width,n=parseFloat((i*m*100).toFixed(2)),o=d-k,p=e-g;return{x:l,y:h,remainderX:o,remainderY:p,percent:n,region:{top:n>0&&c.top>=0,bottom:n>0&&c.bottom<=e,left:n>0&&c.left>=0,right:n>0&&c.right<=d}}},getMRAIDViewableMetrics=function(a,b,c){return{x:a?b:0,y:a?c:0,percent:a?100:0,region:{top:a,bottom:a,left:a,right:a}}},getHiddenProp=function(){var a=["webkit","moz","ms","o"];if("hidden"in document)return"hidden";for(var b=0;b<a.length;b++)if(a[b]+"Hidden"in document)return a[b]+"Hidden";return null},isHidden=function(a){a=a||window;var b=getHiddenProp();return b?a.document[b]:!1},requestAnimationFrame=function(a){return"requestAnimationFrame"in window?window.requestAnimationFrame(a):setTimeout(a,1e3/30)},cancelAnimationFrame=function(a){return"cancelAnimationFrame"in window?window.cancelAnimationFrame(a):clearTimeout(a)};F.ViewabilityMixin={viewabilityCallbacks:[],scrollPositionCallbacks:[],events:{pre_render:"initViewability",renderComplete:"enableViewability"},initViewability:function(){var a=this;a.model.bind("viewReady",function(){!a.model.expansionDisabled||F._.is.inConsole()?a.onReady():(window.top.postMessage({eventName:"viewTriggerInitiate",browser:{msie:F._.is.browser.msie,opera:F._.is.browser.opera},iframeSrc:window.document.baseURI},"*"),a.bind("destroy",function(){window.top.postMessage({eventName:"viewTriggerDestroy"},"*")}),window.addEventListener("message",function(b){a.postMessageHandler(b)},!1),setTimeout(function(){a.viewTriggerData||a.onReady()},5e3)),a.onReadyTriggered=!0})},onReady:function(){var a=this,b=a.model.supports.mraid,c=F._.getExpandableWindow(),d=(a.getExpandableAnchorInsertionPoint(),a.model.getConfig().appWidth),e=a.model.getConfig().appHeight,f=a.getData(),g=f.scrollX,h=f.scrollY,i=f.viewableMetrics,j=i.percent,k=i.x,l=i.y,m=i.region,n=f.scrollMetrics,o=n.viewportXPixels,p=n.viewportYPixels,q=g,r=h;a.processViewabilityCallbacks=function(b,c){f=a.getData(),q=f.scrollX,r=f.scrollY,i=f.viewableMetrics;var d={userInitiated:c,toX:q,fromX:c?g:0,toY:r,fromY:c?h:0,toPercent:i.percent,fromPercent:c?j:0,toPixelsX:i.x,fromPixelsX:c?k:0,toPixelsY:i.y,fromPixelsY:c?l:0,toRegion:i.region,fromRegion:c?m:{},remainderX:i.remainderX,remainderY:i.remainderY,trigger:a.model.impressionSequence};F._.each(a.viewabilityCallbacks,function(c){b&&c!==b||c.apply(a,[d])}),c&&(g=q,h=r,j=i.percent,k=i.x,l=i.y,m=i.region)},a.processScrollPositionCallbacks=function(b,c){f=a.getData(),q=f.scrollX,r=f.scrollY,n=f.scrollMetrics;var d={userInitiated:c,viewportWidth:n.viewportWidth,viewportHeight:n.viewportHeight,toX:q,fromX:c?g:0,toY:r,fromY:c?h:0,toViewportXPixels:n.viewportXPixels,fromViewportXPixels:c?o:0,toViewportYPixels:n.viewportYPixels,fromViewportYPixels:c?p:0,trigger:a.model.impressionSequence};F._.each(a.scrollPositionCallbacks,function(c){b&&c!==b||c.apply(a,[d])}),c&&(g=q,h=r,o=n.viewportXPixels,p=n.viewportYPixels)};var s={},t=function(a){return function(){s[a]||(s[a]=!0,u(),requestAnimationFrame(function(){s[a]=!1}))}},u=function(){a.processViewabilityCallbacks(null,!0),a.processScrollPositionCallbacks(null,!0)};(!a.model.expansionDisabled||F._.is.inConsole())&&(a.addEvent(c,"scroll",t("scroll")),a.addEvent(c,"resize",t("resize")));var v=getHiddenProp();if(v){var w=v.replace(/[H|h]idden/,"")+"visibilitychange";a.addEvent(c.document,w,u)}if(a.bind("renderComplete",function(){(!b||b.isViewable())&&a.processViewabilityCallbacks(null,!1),a.processScrollPositionCallbacks(null,!1)}),b&&a.addEvent(b,"viewableChange",function(){u()}),!a.model.previous&&!a.model.baseParent){var x=a.model.supports.vpaid?2:1,y=50;d*e>=242500&&(y=30);var z=F._.once(function(b,c){var d=b&&b.info;F.Metrics.logNotation(a.model,{subtype:F.MetricsConstants.EventSubtypes.NOTATION_IMPRESSIONDATA,detail:"Viewable Impression",eventData:{scrollX:d.toX,scrollY:d.toY,pixelsVisible:d.toPixels,percentVisible:d.toPercent,timeThreshold:x,percentThreshold:y},trigger:c})}),A=a.getViewabilityCallback(function(b){z(b,a.model.impressionSequence),a.removeViewabilityListener(A)},this,{area:y,areaUnit:"pct",threshold:x});a.addViewabilityListener(A);var B=!1;a.model.bind("metrics:requestData",function(b){var c=a.getData();if(!B&&b.data&&b.data.it===F.MetricsConstants.EventTypes.INTERACTION){var d=c.viewableMetrics;z({info:{toX:c.scrollX,toY:c.scrollY,toPixels:d.y,toPercent:d.percent}},b.data.sq),B=!0}})}},enableViewability:function(){this.viewabilityEnabled=!0,this.processViewabilityCallbacks&&this.processViewabilityCallbacks(),this.processScrollPositionCallbacks&&this.processScrollPositionCallbacks()},getViewabilityCallback:function(a,b,c){var d=this,e=F._.extend({areaUnit:"pct"},c),f=Number(d.model.getConfig().appHeight);e.area||(e.area="pct"===e.areaUnit?50:f/2);var g=null,h="out"===e.direction;return function(d){var i="out"===e.direction,j=!1;if(i?e.region&&d.toRegion[e.region]||("px"===e.areaUnit&&f-d.toPixelsY>=e.area||"pct"===e.areaUnit&&100-d.toPercent>=e.area)&&(j=!0):(!e.region||d.toRegion[e.region])&&("px"===e.areaUnit&&(d.toPixelsY>=e.area||d.toPixelsY+d.remainderY>=e.area)||"pct"===e.areaUnit&&d.toPercent>=e.area)&&(j=!0),!h&&j){var k=isNaN(e.threshold)?1:parseInt(e.threshold,10),l=function(){g=null,a.apply(b,[{info:d,options:c}])};k?g=setTimeout(l,1e3*k):l()}else j||(clearTimeout(g),g=null);h=j}},getScrollPositionCallback:function(a,b,c){var d=this,e=F._.extend({},c),f=0,g=0,h=0,i=0,j=Number(d.model.getConfig().appWidth),k=Number(d.model.getConfig().appHeight);return function(d){var l="horizontal"!==e.orientation;if("viewport"===e.mode){var m={};F._.each(["top","bottom","left","right"],function(a){m[a]=0;var b="offset"+a.substr(0,1).toUpperCase()+a.substr(1);if(e[b]){var c=e[b+"Unit"]||"px";if("px"===c)m[a]=e[b];else{var f="top"===a||"bottom"===a?d.viewportHeight:d.viewportWidth;m[a]=f*(e[b]/100)}}});var n=d.viewportWidth+j,o=d.viewportHeight+k,p=e.pageDirection||"top",q=0,r=0;if("middle"===p){var s=n/2,t=o/2;d.toViewportXPixels<s?q=(d.toViewportXPixels-m.left)/(s-m.left):d.toViewportXPixels>s&&(q=1-(d.toViewportXPixels-s)/(s-m.right)),d.toViewportYPixels<t?r=(d.toViewportYPixels-m.top)/(t-m.top):d.toViewportYPixels>t&&(r=1-(d.toViewportYPixels-t)/(t-m.bottom))}else q=(d.toViewportXPixels-m.left)/(n-m.left-m.right),r=(d.toViewportYPixels-m.top)/(o-m.top-m.bottom);q=Number(Math.max(0,Math.min(q,1)).toFixed(4)),r=Number(Math.max(0,Math.min(r,1)).toFixed(4)),"left"===p&&(q=1-q),"top"===p&&(r=1-r),(!l&&q!==f||l&&r!==g)&&a.apply(b,[{info:F._.extend(d,{value:l?r:q}),options:c}]),f=q,g=r}else if("page"===e.mode){var u=e.thresholdAmount||100,v=e.direction||"prev",w=Math.floor((l?d.toY:d.toX)/u),x=l?i:h;if(w>x&&"next"===v||x>w&&"prev"===v)for(var y=Math.abs(w-x);y--;)a.apply(b,[{info:F._.extend(d,{value:w}),options:c}]);l?i=w:h=w}}},addViewabilityListener:function(a){var b=this;b.viewabilityCallbacks.push(a),b.viewabilityEnabled&&b.processViewabilityCallbacks(a,!1)},removeViewabilityListener:function(a){var b=this,c=[];F._.each(b.viewabilityCallbacks,function(b){b!==a&&c.push(b)}),b.viewabilityCallbacks=c},addScrollPositionListener:function(a){var b=this;b.scrollPositionCallbacks.push(a),b.viewabilityEnabled&&b.processScrollPositionCallbacks(a,!1)},removeScrollPositionListener:function(a){var b=this,c=[];F._.each(b.scrollPositionCallbacks,function(b){b!==a&&c.push(b)}),b.scrollPositionCallbacks=c},getData:function(){var a=this,b=a.model.supports.mraid,c=F._.getExpandableWindow(),d=a.getExpandableAnchorInsertionPoint();return a.model.expansionDisabled&&a.viewTriggerData?(a.viewTriggerData.viewableMetrics=b?getMRAIDViewableMetrics(b.isViewable(),a.model.getConfig().appWidth,a.model.getConfig().appHeight):a.viewTriggerData.viewableMetrics,a.viewTriggerData.scrollMetrics=b?getMRAIDPageScrollMetrics(c,b):a.viewTriggerData.scrollMetrics,a.viewTriggerData):{scrollX:getScrollX(c),scrollY:getScrollY(c),viewableMetrics:b?getMRAIDViewableMetrics(b.isViewable(),a.model.getConfig().appWidth,a.model.getConfig().appHeight):getWebViewableMetrics(c,d),scrollMetrics:b?getMRAIDPageScrollMetrics(c,b):getWebPageScrollMetrics(c,d)}},postMessageHandler:function(a){var b=this;switch(a.data.eventName){case"viewTriggerInitiated":b.onReadyTriggered&&b.model.expansionDisabled&&(b.viewTriggerData=a.data.viewTriggerData,b.onReady());break;case"viewTriggerFired":b.viewTriggerData=a.data.viewTriggerData,b.processViewabilityCallbacks(null,a.data.isUserIntiated),b.processScrollPositionCallbacks(null,a.data.isUserIntiated)}}},this.viewMixins||(this.viewMixins={}),this.viewMixins.ViewabilityMixin="ViewabilityMixin";}],"scriptDependencies": {"dd8ba7f7-0a1b-4fc1-8ead-18a9fa7be821":(function(window, document, eval, top){ return Object({
+	consoleExists: null,
+	api: null,
+	rectangle: null,
+	config: null,
+	state: null,
+	rendered: null,
+	metricsHelper: null,
+	playerId: null,
+	shockContext: null,
+	autoPlay: null,
+	playMuted: false,
+	isLegacyPlayer: null,
+	isCurrentlyInPrerollMode: false,
+	onDisabledMuted: false,
+	disableForcePauseInter: null,
+	wasPlayingOnDisable : false,
+	autoPlaySuccessful: false,
+	isFirstContentStart: true,
+	playerState: null,
+	volume: 100,
+	thePlayer: null,
+
+	contentMetricsHelper: null,
+	withinPostContentMetricCallDuration: false,
+	suppressUnpauseMetric: false,
+	quartilePositions: null,
+	firstContentMetricLogged: false,
+	//playArrestInterval: null,
+
+	UNINITIALIZED: "uninitialized",
+	PLAYING: "playing",
+	PAUSED: "paused",
+
+
+	setConfig: function(resources) {
+		var self = this;
+		self.api = resources.api;
+		self.rectangle = resources.rectangle;
+		self.config = resources.config;
+
+		var configUrl = self.config.getValue('config_url'); // ie 'http://config.playwire.com/videos/v2/3029761/zeus.json';
+		if (configUrl) {
+			self.isLegacyPlayer = (configUrl.indexOf('zeus') == -1) ? true : false;
+		}
+		self.playerId = "myPlayer_" + resources.id;
+		self.autoPlay = self.config.getBoolean('auto_play');
+		self.playerState = self.UNINITIALIZED;
+		self.playMuted = self.autoPlay && self.config.getBoolean('mute');
+		if (self.playMuted) {      
+			self.volume = 0;       
+		}
+	},
+
+	flite: {
+
+		initialize: function(resources) {
+			var self = this;
+			if (typeof console === "undefined" || typeof console.log === "undefined") {
+				this.consoleExists = false;
+			} else {
+				this.consoleExists = true;
+			}
+			this.setConfig(resources);
+			this.quartilePositions = [];
+		},
+
+		stateChange: function(info) {
+			var self = this;
+			var playerExists;
+			self.state = info.state;
+
+			try {
+				var test = self.shockContext.window.Bolt;
+				playerExists = true;
+			} catch (e) {
+				playerExists = false;
+			}
+
+			switch (info.state) {
+				case self.api.state.ENABLED:
+
+					if (self.disableForcePauseInter) {
+						clearInterval(self.disableForcePauseInter);
+					}
+
+					if (!self.rendered) {
+						self.rendered = true;
+
+						self.metricsHelper = info.trigger;
+
+						if (self.api.environment.editor) {
+							self.defineMessageBox();
+						} else {
+							self.createShockContainer();
+						}
+					} else {
+
+						// Cant use this because when video is restarted to plays another preroll video
+						// Going to mute video only
+						/*if (playerExists && (self.autoPlay && !self.autoPlaySuccessful || self.wasPlayingOnDisable)) {
+							self.log("ABOUT TO CALL PLAY FROM DISABLED");
+							self.shockContext.window.Bolt.playMedia(self.playerId);
+						}*/
+
+
+						// Still playing preroll, unmute it
+						//if (self.isCurrentlyInPrerollMode) {
+							self.shockContext.window.Bolt.unmuteMedia(self.playerId);
+						//}
+					}
+					break;
+				case self.api.state.DISABLED:
+
+					if (playerExists) {
+
+						// For preroll pause does not work, calling mute
+						//if (self.isCurrentlyInPrerollMode) {
+							self.shockContext.window.Bolt.muteMedia(self.playerId);
+						//}
+
+						if (self.playerState === self.PLAYING) {
+							self.wasPlayingOnDisable = true;
+						} else {
+							self.wasPlayingOnDisable = false;
+						}
+					}
+
+					// Cant use this because when video is restarted to plays another preroll video
+					// Going to mute video only
+					// Ensure that any play action is shut down
+					//self.initiatePauseInterval();
+
+					break;
+				case self.api.state.UNLOADED:
+					// Exceptions because: intervals not cleared within console on mode switches [ie 'Test Mode' to 'Preview Mode']
+					if (self.disableForcePauseInter) {
+						try {
+							clearInterval(self.disableForcePauseInter);
+						} catch (e) {}
+					}
+					break;
+			}
+		},
+
+		resize: function(resizeConfig) {
+			this.rectangle.width = resizeConfig.width;
+			this.rectangle.height = resizeConfig.height;
+			this.defineMessageBox();
+		},
+
+		pauseVideo: function() {
+			var self = this;
+			try {
+				self.shockContext.window.Bolt.pauseMedia(self.playerId);
+			} catch (e) {}
+		},
+
+		playVideo: function() {
+			var self = this;
+			try {
+				self.shockContext.window.Bolt.playMedia(self.playerId);
+			} catch (e) {}
+		},
+
+		muteVideo: function() {
+			var self = this;
+			try {
+				self.shockContext.window.Bolt.muteMedia(self.playerId);
+			} catch (e) {}
+		},
+
+		unmuteVideo: function() {
+			var self = this;
+			try {
+				self.shockContext.window.Bolt.unmuteMedia(self.playerId);
+				// Ensure sound comes back on, play muted setting sets volume to 0 and will stay that way unless...
+				self.shockContext.window.Bolt.setVolume(self.playerId, 1);
+			} catch (e) {}
+		},
+
+		logCurrentData: function() {
+			var self = this;
+			self.thePlayer.getCurrentContent(function(currentContent){
+				//self.log("currentContent...");
+				//self.log(currentContent);
+			});
+		}
+	},
+
+	initiatePauseInterval: function() {
+		self.disableForcePauseInter = setInterval(function() {
+			if (playerExists && self.playerState !== self.PAUSED) {
+				self.log("JUST CALLED PAUSE FROM DISABLED");
+				self.shockContext.window.Bolt.pauseMedia(self.playerId);
+			}
+			// Interval doesn't clear
+			/*if (playerExists && self.playerState == self.PAUSED) {
+				clearInterval(self.disableForcePauseInter);
+				self.disableForcePauseInter = undefined;
+			}*/
+		}, 500);
+	},
+
+	defineMessageBox: function() {
+		if (!this.editModeBox) {
+			this.editModeBox = this.api.dom.getElement('div');
+			this.editModeBox.css('background-color', '#000');
+			this.editModeBox.alpha(0.36);
+			this.addChild(this.editModeBox);
+		}
+
+		this.editModeBox.width(this.rectangle.width);
+		this.editModeBox.height(this.rectangle.height);
+
+		var MESSAGE_WIDTH = 196;
+		var MESSAGE_HEIGHT = 100;
+		if (!this.messageBox) {
+			this.messageBox = this.api.dom.getElement('div');
+			this.messageBox.width(MESSAGE_WIDTH);
+			this.messageBox.height(MESSAGE_HEIGHT);
+			this.messageBox.css('background-color', '#232323');
+			this.messageBox.alpha(0.6);
+			this.addChild(this.messageBox);
+		}
+
+		this.messageBox.x( (this.rectangle.width/2)-(MESSAGE_WIDTH/2) );
+		this.messageBox.y( (this.rectangle.height/2)-(MESSAGE_HEIGHT/2) );
+
+		var TEXT_WIDTH = 180;
+		var TEXT_HEIGHT = 87;
+		if (!this.messageTextDiv) {
+			this.messageTextDiv = this.api.dom.getElement('div');
+			var message = 'Playwire player will load in this space when Studio is not in Edit mode.<br><br>Playerwire video serving fees may apply. Please review your current Terms and Conditions.';
+			this.messageTextDiv.css({
+				'font-family': 'Arial, Helvetica, sans-serif',
+				'font-size': "10px",
+				'color': '#FFF',
+				'letter-spacing': "1px",
+				'line-height': '12px'
+			});
+			this.messageTextDiv.html(message);
+			this.messageTextDiv.width(TEXT_WIDTH);
+			this.messageTextDiv.height(TEXT_HEIGHT);
+			this.addChild(this.messageTextDiv);
+		}
+
+		this.messageTextDiv.x( (this.rectangle.width/2)-(TEXT_WIDTH/2) );
+		this.messageTextDiv.y( (this.rectangle.height/2)-(TEXT_HEIGHT/2) );
+	},
+
+	createShockContainer: function() {
+		var self = this;
+		self.api.dom.getIframe(this, function(shockFrame, shockDocument, shockWindow) {
+
+			// set attributes for the iframe 
+			shockFrame.setAttribute({
+				id: "player_frame",
+				width: self.rectangle.width,
+				height: self.rectangle.height,
+				name: "shockFrame",
+				scrolling: "no",
+				seamless: "seamless",
+				frameBorder: "0",
+				allowTransparency: "true"
+			});
+
+			try {
+				// Keep reference to apects of iframe context
+				self.shockContext = {
+					doc: shockDocument,
+					window: shockWindow,
+					body: shockDocument.getElementsByTagName("body")[0]
+				};
+				self.shockContext.body.setAttribute("id", "flite-playwire-script-loader");
+				self.shockContext.body.style.margin = "0px";
+				self.shockContext.body.style.padding = "0px";
+
+				// Load the script now that iframe has been loaded and 
+				// references have been caught. 
+				self.loadScript();
+			} catch (e) {
+				//self.log("Error:", e.message);
+			}
+
+		});
+	},
+
+	loadScript: function() {
+		var self = this;
+
+		self.shockContext.window.onready = function(playerId) {
+			self.log("onready() happened, arg playerId = "+playerId);
+			var Bolt = self.shockContext.window.Bolt;
+			self.thePlayer = Bolt.getPlayer(playerId);
+
+			function handleAutoplayConditionalOnFirstStart() {
+				self.log("handleAutoplayConditionalOnFirstStart() hit");
+
+				// Inconsistent onready state, could start playing or start paused
+				if (self.autoPlay) {
+					self.log("About to call play on player");
+					Bolt.playMedia(self.playerId);
+					//self.logContentMetric();
+				} else {
+
+					self.log("Not autoPlay, do nothing");
+
+					// Below pause call on production right now, had to pick less of two evils
+					// Either leave this out assuming video always initiates paused (which it doesn't)
+					// or include it, having a better chance of arresting the video, preroll sometimes ignores pause command regardless
+					// Ideally video would always do the same thing
+
+					// Can't use interval, arrests content fine, does not work on some preroll, so preroll plays (with sound on), then completes, then subsequent content video is arrested (bad)
+					//self.playArrestInterval = setInterval(function(){
+						//try {
+							//Bolt.pauseMedia(self.playerId);
+						//} catch (e) {}
+					//}, 500);
+
+					// Below metric call would make sense if video always started paused, and only user interaction would provoke "STARTED" dispatch
+					// Ideally I could create a conditional here to determine if user interaction caused STARTED, if true, fire below metric
+					// If not a result of interaction, attempt to arrest video (which might still not work)
+					//self.logFirstInteractionAndContent();
+				}
+			}
+
+			// Following performed result of "onready"
+
+			// What player does 'onready' is inconsistent
+			// If autoplay and is starting paused, need to kickstart it
+			// If autoplay and is starting paused, leave it alone
+			if (self.autoPlay && self.playerState !== self.PLAYING) {
+				self.log("<><> autoplay is true - call playMedia()");
+				Bolt.playMedia(self.playerId);
+			}
+
+			// Does not appeart to be called anymore
+			Bolt.on(self.playerId, Bolt.BOLT_AD_STARTED, function(playerId, eventName, data) {
+				self.log("||||||||||||||||||||||| AD STARTED");
+
+				self.trigger({type: "AD_STARTED", trigger: self.metricsHelper});
+
+				self.isCurrentlyInPrerollMode = true;
+
+				//self.log("AD - self.isFirstContentStart = "+self.isFirstContentStart);
+
+				if (self.isFirstContentStart) {
+
+					// REAL PROBLEMS HERE - removing, onready autoplay conditional appears to work fine NOW
+					//handleAutoplayConditionalOnFirstStart();
+
+					// Does not always honor data-volume attribute
+					if (self.playMuted) {
+						Bolt.muteMedia(self.playerId);
+					}
+				} else {
+					//self.logContentMetric();
+				}
+
+				if (self.state === self.api.state.DISABLED) {
+					Bolt.pauseMedia(self.playerId);
+					// Pause not honored, backup mute call...
+					Bolt.muteMedia(self.playerId);
+				}
+
+				self.isFirstContentStart = false;
+			});
+
+			Bolt.on(self.playerId, Bolt.BOLT_CONTENT_STARTED, function(playerId, eventName, data) {
+				self.log("|||||||||||||||||||||| CONTENT STARTED");
+
+				self.trigger({type: "CONTENT_STARTED", trigger: self.metricsHelper});
+
+				self.isCurrentlyInPrerollMode = false;
+
+				//self.log("CONTENT - self.isFirstContentStart = "+self.isFirstContentStart);
+
+				// PRE-ROLL AD PLAYS TWICE AS RESULT OF autoplay in COMPONENT SETTING
+				// Ad told to play by auto setting, then gets to content (this), then told to play again, which initiates pre-roll ad (second pre-roll play)
+				if (self.isFirstContentStart) {
+
+					// REAL PROBLEMS HERE - removing, onready autoplay conditional appears to work fine NOW
+					//handleAutoplayConditionalOnFirstStart();
+
+					// PROBLEM, WILL ALWAYS MUTE CONTENT AFTER USERS HAS POTENTIALLY UNMUTED AD
+					// Does not always honor data-volume attribute
+					/*if (self.playMuted) {
+						Bolt.muteMedia(self.playerId);
+					}*/
+				} else {
+					//self.logContentMetric();
+				}
+
+				// THIS DOES NOT WORK - starts playing again after PAUSE
+				/*if (self.state === self.api.state.DISABLED) {
+					Bolt.pauseMedia(self.playerId);
+					//self.log("Has just called PAUSE");
+				}*/
+
+				// PUTTING BACK IN WITH MUTE BACKUP
+				if (self.state === self.api.state.DISABLED) {
+					Bolt.pauseMedia(self.playerId);
+					// Pause not honored, backup mute call...
+					Bolt.muteMedia(self.playerId);
+				}
+
+				self.isFirstContentStart = false;
+			});
+
+
+			Bolt.on(self.playerId, Bolt.BOLT_AD_COMPLETE, function(playerId, eventName, data) {
+				self.trigger({type: "AD_COMPLETE", trigger: self.metricsHelper});
+				self.contentMetricsHelper.logNotation({
+					subtype: self.api.metrics.subtype.NOTATION_UPDATE,
+					detail: "Preroll Complete"
+				});
+			});
+
+
+			// THESE ARE USELESS SO FAR, DISPATCHED DURING PREROLL NOT CONTENT
+			/*Bolt.on(self.playerId, Bolt.BOLT_FIRST_QUARTILE, function() {
+				self.logQuartile("1/4");
+			});
+
+			Bolt.on(self.playerId, Bolt.BOLT_MIDPOINT, function() {
+				self.logQuartile("1/2");
+			});
+
+			Bolt.on(self.playerId, Bolt.BOLT_THIRD_QUARTILE, function() {
+				self.logQuartile("3/4");
+			});*/
+
+			Bolt.on(self.playerId, Bolt.BOLT_CONTENT_COMPLETE, function() {
+				self.trigger({type: "CONTENT_COMPLETE", trigger: self.metricsHelper});
+				//self.logQuartile("4/4");
+				self.suppressUnpauseMetric = true;
+			});
+
+
+
+			Bolt.on(self.playerId, Bolt.BOLT_CONTENT_STATE_CHANGED, function(playerId, eventName, data) {
+				self.log("eventName.state = "+eventName.state);
+				if (eventName.state === "playing") {
+
+					self.playerState = self.PLAYING;
+
+					// TODO wish I could use this but not enough info from player to filter calls down to predicable user interactions
+					//self.logPlayInteraction();
+
+					if (self.autoPlay && self.state !== self.api.state.DISABLED) {
+						self.autoPlaySuccessful = true;
+					}
+
+					// Hack until the "_STARTED" issue is resolved
+					if (!self.firstContentMetricLogged) {
+						//self.logContentMetric();
+					}
+
+				} else if (eventName.state === "paused") {
+					self.playerState = self.PAUSED;
+					//self.logPauseInteraction();
+
+					// Once first play is arrested (autoplay=false)
+					// For some reason interval is not cleared :(
+					/*if (self.playArrestInterval) {
+						clearInterval(self.playArrestInterval);
+						self.playArrestInterval = null;
+					}*/
+
+				} else if (eventName.state === "resume") {
+					if (self.firstContentMetricLogged) {
+						//self.logResumeInteraction();
+					}
+				}
+			});
+		};
+
+		// Create script tag
+		var script = self.shockContext.doc.createElement('script');
+		script.type = 'text/javascript';
+		script.id = 'script';
+
+		if (self.isLegacyPlayer) {
+			script.src = '//cdn.playwire.com/bolt/js/embed.min.js';
+		} else {
+			// TEMP STAGING VERSION
+			//script.src = "//html5player.gamezone.com/zeus_staging/zeus/embed.js";
+			script.src = "//cdn.playwire.com/bolt/js/zeus/embed.js";
+		}
+
+		// "Autoplay embed setting not supported"
+		// script.setAttribute('data-autoplay', self.autoPlay);
+
+		// Removing this allows 'onready' function to be hit
+		//script.setAttribute('data-autoload', 'false');
+		
+		// Updated hoping to see improvment in consistency
+		script.setAttribute('data-autoload', 'true');
+
+		// Playwire changed attribute name
+		//script.setAttribute('data-container', self.playerId);
+		script.setAttribute('data-id', self.playerId);
+
+
+		script.setAttribute('data-width', self.rectangle.width);
+		script.setAttribute('data-height', self.rectangle.height);
+		script.setAttribute('data-css', '//cdn.playwire.com/bolt/js/zeus/skins/default.css');  //Default CSS (See Playwire studio for more options)
+		script.setAttribute('data-onready', "onready");
+
+		// Leaving in to prevent sound blurp on init
+		script.setAttribute('data-volume', self.volume); 
+
+		if (self.config.getBoolean('use_config_url')) {
+			script.setAttribute('data-config', self.config.getValue('config_url'));
+		} else {
+			script.setAttribute('data-publisher-id', self.config.getValue('publisher_id'));
+			script.setAttribute('data-video-id', self.config.getValue('video_id'));
+		}
+
+		// Trigger script to begin loading
+		self.shockContext.body.appendChild(script);
+	},
+
+	logFirstInteractionAndContent: function() {
+		var self = this;
+		//self.thePlayer.getCurrentTime(function(currentTime){
+			self.metricsHelper = self.metricsHelper.logInteraction({
+				subtype : self.api.metrics.subtype.INTERACTION_CONTROL,
+				mode : self.api.environment.mobile ? self.api.metrics.mode.TOUCH : self.api.metrics.mode.CLICK,
+				detail : "Play",
+				eventData : { t : 0 }
+			});
+			self.logContentMetric();
+		//});
+	},
+
+	logPlayInteraction: function() {
+		this.metricsHelper = this.metricsHelper.logInteraction({
+			subtype : this.api.metrics.subtype.INTERACTION_CONTROL,
+			mode : this.api.environment.mobile ? this.api.metrics.mode.TOUCH : this.api.metrics.mode.CLICK,
+			detail : "Play",
+			// TODO get a real current time
+			eventData : { t : 5 /*that.player.getCurrentTime()*/ }
+		});
+	},
+
+	logResumeInteraction: function() {
+		this.metricsHelper = this.metricsHelper.logInteraction({
+			subtype : this.api.metrics.subtype.INTERACTION_CONTROL,
+			mode : this.api.environment.mobile ? this.api.metrics.mode.TOUCH : this.api.metrics.mode.CLICK,
+			detail : "Unpause",
+			// TODO get a real current time
+			eventData : { t : 5 /*that.player.getCurrentTime()*/ }
+		});
+	},
+
+	logUnpauseMetric: function() {
+		if (this.suppressUnpauseMetric) {
+			this.suppressUnpauseMetric = false;
+			this.log("Suppressed unpause metric");
+		} else {
+			this.log("Record unpause metric");
+			this.metricsHelper = this.contentMetricsHelper.logInteraction({
+				subtype : this.api.metrics.subtype.INTERACTION_CONTROL,
+				mode : this.api.environment.mobile ? this.api.metrics.mode.TOUCH : this.api.metrics.mode.CLICK,
+				detail : "Unpause",
+				// TODO get a real current time
+				eventData : { t : 5 /*that.player.getCurrentTime()*/ }
+			});
+		}
+	},
+
+	logPauseInteraction: function() {
+		var self = this;
+		self.thePlayer.getCurrentTime(function(currentTime){
+			self.metricsHelper = self.contentMetricsHelper.logInteraction({
+				subtype : self.api.metrics.subtype.INTERACTION_CONTROL,
+				mode : self.api.environment.mobile ? self.api.metrics.mode.TOUCH : self.api.metrics.mode.CLICK,
+				detail : "Pause",
+				eventData : { t : currentTime.toFixed(0) }
+			});
+		});
+	},
+
+	logContentMetric: function() {
+		var self = this;
+		if (!this.withinPostContentMetricCallDuration) {
+			var vidInfo = this.config.getBoolean('use_config_url') ? "ConfigURL="+this.config.getValue('config_url') : "VideoID="+this.config.getValue('video_id');
+			var detail = (this.isCurrentlyInPrerollMode) ? "PREROLL" : "CONTENT_"+vidInfo;
+			this.contentMetricsHelper = this.metricsHelper.logContent({
+				subtype : this.api.metrics.subtype.CONTENT_PLAY,
+				detail : detail,
+				// TODO, get real duration of video
+				eventData : { duration: this.getStringFromSeconds( Math.floor( 30.234 /*this.myPlayer.duration()*/ ) ) }
+			});
+			// Avoid 'content' metric being tailed by another 'content' directly afterward
+			this.withinPostContentMetricCallDuration = true;
+			setTimeout(function(){ self.withinPostContentMetricCallDuration=false; }, 2500);
+			self.firstContentMetricLogged = true;
+		}
+	},
+
+	logQuartile : function(fraction) {
+		var self = this;
+		self.log("logging -  "+fraction);
+		this.contentMetricsHelper.logNotation({
+			subtype: this.api.metrics.subtype.NOTATION_UPDATE,
+			detail: fraction + " Complete",
+			// TODO get a real current time
+			eventData: { t: 5 /*Math.floor(this.myPlayer.duration())*/ }
+		});
+	},
+
+	// TODO hookup to onTimeupdate + fillout missing items (will need for content video since pre-roll dispatches quartile events [not content])
+	defineQuartiles : function() {
+		var durationTriggers = [0.25, 0.5, 0.75];
+        if (this.quartilePositions.length === 0 && 30.234 /*this.myPlayer.duration()*/ > 0 && 5 /*that.player.getCurrentTime()*/ > 0) {
+            for (var i = 0; i < 3; i++) {
+                this.quartilePositions[i] = 30.234 /*this.myPlayer.duration()*/ * this.durationTriggers[i];
+            }
+        }
+	},
+
+	getStringFromSeconds : function (numSeconds) {
+		var numMinutes = Math.floor(numSeconds / 60);
+		var numSecondsLeft = numSeconds % 60;
+		var numMinutesString = (numMinutes < 10) ? '0' + numMinutes.toFixed(0) : numMinutes.toFixed(0);
+		var numSecondsString = (numSecondsLeft < 10) ? '0' + numSecondsLeft.toFixed(0) : numSecondsLeft.toFixed(0);
+		return "(" + String(numMinutesString) + ':' + numSecondsString + ")";
+	},
+
+	log: function(s) {
+		if (this.consoleExists) {
+			//console.log("|||||||||| "+s);
+		}
+	}
+}); })(),"6fe1bac1-925a-429d-8255-20342b11f21d":(function(window, document, eval, top){ return Object({name:"Image",rectangle:null,api:null,image:null,spinner:null,config:null,resizeTimeout:null,assetUrl:null,scaleMode:null,position:null,repeatMode:null,upScale:null,scale:null,showSpinner:!1,retina:!1,lossy:!1,imageQuality:null,isSVG:null,flite:{properties:{supportsPreload:!0},initialize:function(e){this.rectangle=e.rectangle,this.api=e.api,this.config=e.config,this.assetUrl=this.config.getValue("asset_url"),this.isSVG=this.assetUrl&&!!this.assetUrl.match(/\.svg$/),this.scaleMode=this.config.getValue("scale_mode")||"DOWNSCALE",this.upScale=this.config.getBoolean("upscale"),this.scale=this.config.getInt("scale")||100,this.api.util.inRange(this.scale,0,200,!0)||(this.scale=100),this.position=this.upScale?(this.config.getValue("position_v_up")||"center")+" "+(this.config.getValue("position_h_up")||"center"):(this.config.getValue("position_v")||"top")+" "+(this.config.getValue("position_h")||"left"),this.repeatMode=this.config.getValue("repeat_mode")||"no-repeat",this.showSpinner=this.config.getBoolean("spinner"),this.retina=this.config.getBoolean("retina"),this.lossy=this.config.getValue("image_loss")==="lossy",this.imageQuality=this.config.getInt("image_quality")||70,this.api.util.inRange(this.imageQuality,0,100,!0)||(this.imageQuality=70)},stateChange:function(e){e.state===this.api.state.ENABLED||e.state===this.api.state.PRELOADED?this.image||this.loadImage():e.state===this.api.state.UNLOADED&&this.image&&this.removeChild(this.image)},resize:function(e){var t=this;if(this.rectangle.width!=e.width||this.rectangle.height!=e.height)this.rectangle=e,this.isSVG?(t.image.width(t.rectangle.width),t.image.height(t.rectangle.height)):(this.alpha(.5),this.resizeTimeout&&clearTimeout(this.resizeTimeout),this.resizeTimeout=setTimeout(function(){t.removeChild(t.image),t.loadImage(),t.alpha(1)},500))}},loadImage:function(){var e=this;if(e.assetUrl){var t=e.assetUrl,n=e.retina?2:1,r=e.retina?.5:1;if(e.assetUrl.indexOf("data")!==0)if(!e.isSVG){var i={maxWidth:e.rectangle.width*n,maxHeight:e.rectangle.height*n,type:e.scaleMode};e.lossy&&(i.format="JPG",i.quality=e.imageQuality),t=e.api.urls.getProxiedImageUrl(e.assetUrl,i)}else r=1,n=1,t=e.api.urls.getProxiedFeedUrl(e.assetUrl,{raw:!0});e.spinner=null,e.showSpinner&&(e.spinner=e.api.factory.getSpinner(),e.spinner.x(.5*(e.rectangle.width-e.spinner.width())),e.spinner.y(.5*(e.rectangle.height-e.spinner.height())),e.addChild(e.spinner));var s=new Image;s.onload=function(){var n=e.isSVG?e.rectangle.width:s.width*r,i=e.isSVG?e.rectangle.height:s.height*r;e.image.css("backgroundImage","url('"+t+"')");if(e.upScale){var o=0;e.scaleMode!=="DOWNSCALE"?(n<e.rectangle.width&&(o=e.rectangle.width/n,n*=o,i*=o),i<e.rectangle.height&&(o=e.rectangle.height/i,n*=o,i*=o)):(o=Math.min(e.rectangle.width/n,e.rectangle.height/i),n*=o,i*=o),e.image.css("background-size",n+"px "+i+"px")}else n=n*e.scale/100,i=i*e.scale/100,e.image.css("background-size",n+"px "+i+"px");e.repeatMode!=="tile"&&e.image.css("background-repeat",e.repeatMode),e.position!=="left top"&&e.image.css("background-position",e.position),e.image.width(e.rectangle.width),e.image.height(e.rectangle.height),e.addChild(e.image),e.removeSpinner(),e.trigger({type:e.api.state.events.LOADED}),e.trigger({type:"image_complete"},!0)},s.onerror=function(){e.removeSpinner(),e.trigger({type:"image_error"},!0)},e.image=e.api.dom.getElement("div"),s.src=t}else e.trigger({type:this.api.state.events.LOADED})},removeSpinner:function(){this.spinner&&(this.removeChild(this.spinner),this.spinner=null)}}); })(),"670c1769-1ab1-428c-a356-e7776bc08fd8":(function(window, document, eval, top){ return Object({flite:{initialize:function(e){var t=e.api,n=e.config;if(t.environment.editor){var r=n.getColor("color")||"transparent";this.css("background-color",r),this.alpha(.6)}else this.css("background-color","#000000"),this.alpha(0)}}}); })()}});
