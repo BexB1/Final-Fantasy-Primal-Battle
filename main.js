@@ -36,7 +36,9 @@ $('#start').on('click', function (){
 });
 
 
-
+$('#attackButton').on('click', function(){
+  attackCalc();
+}); 
 
 
 
@@ -66,51 +68,105 @@ $('#start').on('click', function (){
 
 // Cruft code, for basic testing.
 var fighter = {
+  name: "FIGHTER",
   atk: 55,
   str: 75,
 }
 
-var monster = {
+var ifrit = {
+  name: "IFRIT",
   def: 95,
   hp: 2000,
 }
 
-// The party members constructor object
-function PartyMember(atk, str, def, mag, hp, mp) {
-  this.ATK = atk;
-  this.STRSTR = str,
-  this.DEF = def;
-  this.MAG = mag;
-  this.HP = hp;
-  this.MP = mp;
-}
+// // The party members constructor object
+// function PartyMember(atk, str, def, mag, hp, mp) {
+//   this.ATK = atk;
+//   this.STRSTR = str,
+//   this.DEF = def;
+//   this.MAG = mag;
+//   this.HP = hp;
+//   this.MP = mp;
+// }
 
-// the stats for the party members
-var Fighter = new PartyMember(25, 10, 10, 55, 200, 500);
-var WhiteMage = new PartyMember(25, 10, 10, 55, 200, 500);
+// // // the stats for the party members
+// // // var fighter = new PartyMember(55, 75, 25, 0, 200, 0);
+// // // var WhiteMage = new PartyMember(25, 10, 10, 55, 200, 500);
 
 
-// The monsters constructor object
-function Enemy(atk, str, def, mag, hp, mp) {
-  this.ATK = atk;
-  this.STRSTR = str,
-  this.DEF = def;
-  this.MAG = mag;
-  this.HP = hp;
-  this.MP = mp;
-}
+// // // The monsters constructor object
+// function Enemy(atk, str, def, mag, hp, mp) {
+//   this.ATK = atk;
+//   this.STRSTR = str,
+//   this.DEF = def;
+//   this.MAG = mag;
+//   this.HP = hp;
+//   this.MP = mp;
+// }
 
-// The stats for the monsters.
-var ifrit = new Enemy(75, 75, 95, 75, 2000, 2000);
+// // The stats for the monsters.
+// var ifrit = new Enemy(75, 75, 95, 75, 2000, 2000);
 
-function attackMove (attacker, defender) {
-  var damageDealt = function() {
+// var attackMove = function (attacker, defender) {
+
+//   var damageDealt = function() {
+//     defender = Fighter;
+//     attacker = Ifrit;
+
+//     var physDiff = defender.def - attacker.str;
+//     console.log(physDiff);
+
+//     var atkDiff = attacker.atk - physDiff;
+
+//     console.log(atkDiff);
+
+//     var multiplier = function (min,max)
+//     {
+//         return Math.floor(Math.random(1)*(max-min+1)+min);
+//     }
+
+//     var defenderHpDown = defender.hp - (atkDiff * multiplier(3,4) + multiplier(25, 90));
+
+//     var damageDone = defender.hp - defenderHpDown;
+//     console.log(defenderHpDown);
+
+//     console.log("Damage done:" + damageDone);
+//   }
+
+// };
+// var attacker;
+// var defender;
+
+// var ifrit = new Enemy(75, 75, 95, 75, 2000, 2000);
+// var fighter = new PartyMember(55, 75, 25, 0, 200, 0);
+
+
+// function attackFoe() {
+
+//     attacker = fighter;
+//     defender = ifrit;
+
+//     attackCalc();
+//     // foeAttack;
+
+//   };
+
+  // var foeAttack = function() {
+
+  //   attacker = monster;
+  //   defender = fighter;
+
+  //   attackCalc;
+  // };
+
+function attackCalc() {
+
+  attacker = fighter;
+  defender = ifrit;
+
     var physDiff = defender.def - attacker.str;
-    console.log(physDiff);
 
     var atkDiff = attacker.atk - physDiff;
-
-    console.log(atkDiff);
 
     var multiplier = function (min,max)
     {
@@ -120,31 +176,34 @@ function attackMove (attacker, defender) {
     var defenderHpDown = defender.hp - (atkDiff * multiplier(3,4) + multiplier(25, 90));
 
     var damageDone = defender.hp - defenderHpDown;
-    console.log(defenderHpDown);
 
-    console.log("Damage done:" + damageDone);
-  }
+    defender.hp = defenderHpDown;
 
-}
+    console.log(attacker.name + " did " + damageDone + " damage to the " + defender.name + ".");
+    console.log(defender.name + "'s HP is now: " + defenderHpDown + "/" + "2000");
 
-// var damageDealt = function() {
-//   var physDiff = monster.def - fighter.str;
-//   console.log(physDiff);
+    if (defender.hp < 1) {
+      console.log(attacker.name + " has defeated the " + defender.name + "!");
+    }
+  };
 
-//   var atkDiff = fighter.atk - physDiff;
 
-//   console.log(atkDiff);
 
-//   var multiplier = function (min,max)
-//   {
-//       return Math.floor(Math.random(1)*(max-min+1)+min);
-//   }
 
-//   var monsterHpDown = monster.hp - (atkDiff * multiplier(3,4) + multiplier(25, 90));
 
-//   var damageDone = monster.hp - monsterHpDown;
-//   console.log(monsterHpDown);
 
-//   console.log("Damage done:" + damageDone);
-// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
