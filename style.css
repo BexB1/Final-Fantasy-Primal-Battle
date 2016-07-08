@@ -4,10 +4,66 @@ body {
   text-transform: uppercase;
 }
 
-#wrapper {
-  background-color: #FFF;
-  top: 100px;
-  width: 1000px;
-  height: 600px;
+div {
+  border: 1px solid white;
 }
 
+#menus {
+  display: inline-block;
+  top: 280px;
+  height: 180px;
+  width: 100%;
+}
+
+#wrapper {
+  background-color: #FFF;
+  background-image: url(./images/backgrounds/grass_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  top: 100px;
+  width: 1000px;
+  height: 590px;
+}
+
+#foe, #playerCharacter {
+  width: 100px;
+  height: 100px;
+}
+
+#foe {
+  background-image: url(./images/sprites/Titan.png);
+  background-repeat: no-repeat;
+  float: left;
+  position: relative;
+  top: 100px;
+  left: 100px;
+  width: 400px;
+  height: 400px;
+}
+
+#foe p {
+  line-height: 500px;
+  font-size: 50px;
+  color: #FFF;
+}
+
+#pcStack {
+  display: inline-block;
+  float: right;
+  position: relative;
+  top: 100px;
+  right: 100px;
+}
+
+#playerCharacter1 {
+  background-image: url(./images/sprites/OnionKnight1.png);
+  background-repeat: no-repeat;
+  height: 150px;
+  width: 150px;
+}
+
+#playerCharacter1 p {
+  line-height: 300px;
+  font-size: 50px;
+  color: #FFF;
+}

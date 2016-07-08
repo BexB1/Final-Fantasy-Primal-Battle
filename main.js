@@ -49,115 +49,54 @@ $('#attackButton').on('click', function(){
 
 // ===== BASIC DAMAGE CALCULATION =====
 
-//   // Variable for PHYSICAL damage calcs
-//   var STR;
+//   STR is the v ariable for base PHYSICAL damage calcs
 
-//   // Variable for MAGICAL damage calcs
-//   var MAG;
+//   ATK is the variable for PHYS damage calc modification
 
-//   // Variable for resistance to attacks
-//   var DEF;
+//   MAG is the variable for MAGICAL damage/healing calcs
 
-//   // Variable for health bar
-//   var HP;
+//   DEF is the variable for resistance to attacks
 
-//   var PhysDmgDealt; 
-//   var PhysdmgTaken;
-// 
+//   HP is the variable for the health bar
+
+//   MP is the variable for the MP/mana bar
 
 
-// Cruft code, for basic testing.
-var fighter = {
-  name: "FIGHTER",
-  atk: 55,
-  str: 75,
+// The party members constructor object
+function PartyMember(name, atk, str, def, mag, hp, mp) {
+  this.name = name;
+  this.atk = atk;
+  this.str = str,
+  this.def = def;
+  this.mag = mag;
+  this.hp = hp;
+  this.defaultHp = 2000;
+  this.mp = mp;
 }
 
-var ifrit = {
-  name: "IFRIT",
-  def: 95,
-  hp: 2000,
+// the stats for the party members
+var fighter = new PartyMember("FIGHTER", 55, 75, 25, 0, 2000, 0);
+
+var blackMage = new PartyMember("BLACK MAGE", 25, 10, 10, 75, 1000, 500);
+var whiteMage = new PartyMember("WHITE MAGE", 25, 10, 10, 55, 1000, 500);
+
+// The monsters constructor object
+function Enemy(name, atk, str, def, mag, hp, mp) {
+  this.name = name;
+  this.atk = atk;
+  this.str = str,
+  this.def = def;
+  this.mag = mag;
+  this.hp = hp;
+  this.defaultHp = 2000;
+  this.mp = mp;
 }
 
-// // The party members constructor object
-// function PartyMember(atk, str, def, mag, hp, mp) {
-//   this.ATK = atk;
-//   this.STRSTR = str,
-//   this.DEF = def;
-//   this.MAG = mag;
-//   this.HP = hp;
-//   this.MP = mp;
-// }
-
-// // // the stats for the party members
-// // // var fighter = new PartyMember(55, 75, 25, 0, 200, 0);
-// // // var WhiteMage = new PartyMember(25, 10, 10, 55, 200, 500);
+// The stats for the monsters.
+var ifrit = new Enemy("IFRIT", 75, 75, 95, 75, 2000, 2000);
 
 
-// // // The monsters constructor object
-// function Enemy(atk, str, def, mag, hp, mp) {
-//   this.ATK = atk;
-//   this.STRSTR = str,
-//   this.DEF = def;
-//   this.MAG = mag;
-//   this.HP = hp;
-//   this.MP = mp;
-// }
 
-// // The stats for the monsters.
-// var ifrit = new Enemy(75, 75, 95, 75, 2000, 2000);
-
-// var attackMove = function (attacker, defender) {
-
-//   var damageDealt = function() {
-//     defender = Fighter;
-//     attacker = Ifrit;
-
-//     var physDiff = defender.def - attacker.str;
-//     console.log(physDiff);
-
-//     var atkDiff = attacker.atk - physDiff;
-
-//     console.log(atkDiff);
-
-//     var multiplier = function (min,max)
-//     {
-//         return Math.floor(Math.random(1)*(max-min+1)+min);
-//     }
-
-//     var defenderHpDown = defender.hp - (atkDiff * multiplier(3,4) + multiplier(25, 90));
-
-//     var damageDone = defender.hp - defenderHpDown;
-//     console.log(defenderHpDown);
-
-//     console.log("Damage done:" + damageDone);
-//   }
-
-// };
-// var attacker;
-// var defender;
-
-// var ifrit = new Enemy(75, 75, 95, 75, 2000, 2000);
-// var fighter = new PartyMember(55, 75, 25, 0, 200, 0);
-
-
-// function attackFoe() {
-
-//     attacker = fighter;
-//     defender = ifrit;
-
-//     attackCalc();
-//     // foeAttack;
-
-//   };
-
-  // var foeAttack = function() {
-
-  //   attacker = monster;
-  //   defender = fighter;
-
-  //   attackCalc;
-  // };
 
 function attackCalc() {
 
@@ -168,8 +107,7 @@ function attackCalc() {
 
     var atkDiff = attacker.atk - physDiff;
 
-    var multiplier = function (min,max)
-    {
+    var multiplier = function (min,max){
         return Math.floor(Math.random(1)*(max-min+1)+min);
     }
 
@@ -181,12 +119,47 @@ function attackCalc() {
 
     console.log(attacker.name + " did " + damageDone + " damage to the " + defender.name + ".");
     console.log(defender.name + "'s HP is now: " + defenderHpDown + "/" + "2000");
+    $('#foe').html("<p>" + defenderHpDown + "/" + defender.defaultHp + "</p>");
 
     if (defender.hp < 1) {
       console.log(attacker.name + " has defeated the " + defender.name + "!");
-    }
+      $('#foe').html("KO!");
+    };
+    
+    foeAttack();
+
   };
 
+// Foe attack round
+
+function foeAttack() {
+
+  attacker = ifrit;
+  defender = fighter;
+
+    var physDiff = defender.def - attacker.str;
+
+    var atkDiff = attacker.atk - physDiff;
+
+    var multiplier = function (min,max) {
+        return Math.floor(Math.random(1)*(max-min+1)+min);
+    }
+
+    var defenderHpDown = defender.hp - (atkDiff * multiplier(3,4) + multiplier(25, 90));
+
+    var damageDone = defender.hp - defenderHpDown;
+
+    defender.hp = defenderHpDown;
+
+    console.log(attacker.name + " did " + damageDone + " damage to the " + defender.name + ".");
+    console.log(defender.name + "'s HP is now: " + defenderHpDown + "/" + "2000");
+      $('#playerCharacter1').html("<p>" + defenderHpDown + "/" + defender.defaultHp + "</p>");
+
+    if (defender.hp < 1) {
+      console.log(attacker.name + " has defeated the " + defender.name + "!");
+      $('#playerCharacter1').html("<p>KO!</p>");
+    }
+  };
 
 
 

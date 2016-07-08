@@ -1,1 +1,0 @@
-document.write(CasaleArgs.pubDefault);if(typeof CasaleArgs === "object" && (typeof CasaleArgs.publisherNotify==="string" || CasaleArgs.publisherNotify instanceof String)){try{document.write(CasaleArgs.publisherNotify.replace(/__IXPMCD__/g,"").replace(/__IXPMWD__/g,"").replace(/__IXPMC__/g,"34").replace(/__IXPMT__/g,"0"));}catch(e){}}
