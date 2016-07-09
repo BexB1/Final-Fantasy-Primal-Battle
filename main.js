@@ -78,10 +78,11 @@ var fighter = new PartyMember("FIGHTER", 55, 75, 25, 0, 2000, 2000, 0);
 
 partyMemberArray.push(fighter);
 
-var blackMage = new PartyMember("BLACK MAGE", 25, 10, 10, 75, 1000, 1000, 500);
-var whiteMage = new PartyMember("WHITE MAGE", 25, 10, 10, 55, 1000, 1000, 500);
+var blackMage = new PartyMember("BLACK MAGE", 55, 35, 10, 75, 1000, 1000, 500);
+var whiteMage = new PartyMember("WHITE MAGE", 55, 35, 10, 55, 1000, 1000, 500);
 
 partyMemberArray.push(whiteMage);
+partyMemberArray.push(blackMage);
 
 
 // Menu stats, etc.
@@ -105,63 +106,89 @@ function Enemy(name, atk, str, def, mag, hp, mp) {
 // The stats for the monsters.
 var ifrit = new Enemy("IFRIT", 75, 75, 95, 75, 2000, 2000);
 
-// Cycling through player characters; loop and array from instances of partyMember?
 
-// So we've got an array of playerCharacter objects...
+     var turn = partyMemberArray;
+     var token = 0, state;
 
-// Each turn, I want to cycle through the characters and choose their actions before the turn is over.
+     function readToken(token) {  
 
-playerTurn();
+       state = turn[token];
+       nextAction(state);
+     };
 
-function playerTurn() {
+     readToken(token); 
 
-  // for (var i = 0; i < partyMemberArray.length; i++) {
+     function readNextToken() {
+       token++;
 
-    //   if (partyMemberArray[i].turnTaken === false) {
-    //     if (partyMemberArray[i] === fighter) {
-    //       fighterTurn();
-    //     }
-    //     else if (partyMemberArray === whiteMage) {
-    //       console.log("White Mage triggering?");
-    //       whiteMageTurn();
-    //     };
-    //   };
-    // }
+       if (token === partyMemberArray.length) {
+         console.log('end of turn');
+         foeAttack();
+         token = 0;
+         return;
+       }
 
-    if (actionsChosen === 0) {
-        fighterTurn();
-      }
-    else if (actionsChosen === 1) {
-      whiteMageTurn();
-    }
-    else {
-      blackMageTurn();
-    }
-    // else if (actionsChosen === 1) {
-    //     console.log("White Mage triggering?");
-    //     whiteMageTurn();
-    //   };
+       readToken(token);
+
+     }
+
+// I just need to get this to reset after the enemy's move...
+
+     function nextAction(val){
+       switch (val) {
+
+         case fighter:
+
+            
+            console.log("It's FIGHTER'S turn!");
+            // fighter.turnTaken = true;
+            turnOptions(fighter);
+            $('#attackButton').on('click', function(){
+              // unbind "click" handler
+            $('#attackButton').off('click');
+              readNextToken();
+            });
+
+            break;
 
 
-  function fighterTurn() {
-    turnOptions(fighter);
-    console.log("It's FIGHTER'S turn!");
-    fighter.turnTaken = true;
-    // whiteMageTurn(whiteMage);
-  }; 
+         case whiteMage:
 
-  function whiteMageTurn() {
-    turnOptions(whiteMage);
-    console.log("It's WHITE MAGE'S turn!");
-    whiteMage.turnTaken = true;
-    blackMageTurn(blackMage);
-  };
+           
+           console.log("It's WHITE MAGE'S turn!");
+           // whiteMage.turnTaken = true;
+             // readNextToken();
+             turnOptions(whiteMage);
+             $('#attackButton').on('click', function(){
+               // unbind "click" handler
+             $('#attackButton').off('click');
+               readNextToken();
+             });
 
-  function blackMageTurn() {
-    turnOptions(blackMage);
-    console.log("It's BLACK MAGE'S turn!");
-    blackMage.turnTaken = true;
-  };
+             break;
+
+        case blackMage:
+      
+           console.log("It's BLACK MAGE'S turn!");
+           // blackMage.turnTaken = true;
+           turnOptions(blackMage);
+           $('#attackButton').on('click', function(){
+             // unbind "click" handler
+             turnOptions(blackMage);
+             $('#attackButton').off('click');
+             readNextToken();
+           });
+
+           break;
+
+         default: 
+          console.log("Turn ended.");
+
+          break;
+       };
+     }
+
+// Function for the menu options.
 
   function turnOptions(character) {
 
@@ -180,9 +207,9 @@ function playerTurn() {
 
     actionsChosen++;
     });
-
-
   };
+
+
 
 // Menu for items option
 
@@ -269,7 +296,7 @@ function foeAttack() {
       $('#playerCharacter1').html("<p>KO!</p>");
       gameOver();
     }
-    return "Turn over";
+    readToken();
   };
 
 
@@ -277,7 +304,7 @@ function gameOver() {
   alert("Game over!");
 };
 
-};
+
 
 
 
