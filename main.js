@@ -306,7 +306,7 @@ function attackCalc(attacker) {
 
     $('#damageAnnouncer').html(attacker.name + " did " + damageDone + " damage to the " + defender.name + ".");
     $('#turnAnnouncer').html(defender.name + "'s HP is now: " + defenderHpDown + "/" + defender.defaultHp);
-    $('#foe').html("<p>" + defenderHpDown + "/" + defender.defaultHp + "</p>");
+    $('#foeBar').html(defenderHpDown + "/" + defender.defaultHp);
 
     if (defender.hp < 1) {
       $('#turnAnnouncer').html(attacker.name + " has defeated the " + defender.name + "!");
@@ -368,7 +368,7 @@ function castFire(target) {
 
     $('#damageAnnouncer').html("BLACK MAGE cast FIRE! " + target.name + " took " + fireDmg + " damage!");
     $('#turnAnnouncer').html(target.name + "'s HP is now: " + target.hp + "/" + target.defaultHp);
-    $('#foe').html("<p>" + target.hp + "/" + target.defaultHp + "</p>");
+    $('#foeBar').html(defenderHpDown + "/" + defender.defaultHp);
 
     healthBarsUpdate();
 
@@ -473,8 +473,6 @@ function gameOver() {
     alert("Game over!");
   }
 };
-
-
 
 function healthCheck() {
   for (var i = 0; i < partyMemberArray.length; i++) {
