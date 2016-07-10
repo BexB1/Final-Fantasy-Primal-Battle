@@ -2,10 +2,23 @@ body {
   font-family: font-family: 'Playfair Display SC', serif;
   background-color: #c6c6ec;
   text-transform: uppercase;
+  background-image: url(./images/backgrounds/grass_bg.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 div {
   border: 1px solid white;
+}
+
+#fighterStats {
+  text-align: left;
+  color: #FFF;
+  padding: 10px;
+}
+
+#fighterStats span {
+  align: right;
 }
 
 #menus {
@@ -13,22 +26,16 @@ div {
   background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(34, 63, 158, 1));
   background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(34, 63, 158, 1));
   display: inline-block;
+  position: fixed;
   border: 10px solid white;
   border-radius: 15px;
-  top: 280px;
-  height: 180px;
-  width: 100%;
+  margin: 0 auto;
+  left: 0px;
+  bottom: 0px;
+  height: 150px;
+  width: 99%;
 }
 
-#wrapper {
-  background-color: #FFF;
-  background-image: url(./images/backgrounds/grass_bg.png);
-  background-repeat: no-repeat;
-  background-size: 100%;
-  top: 100px;
-  width: 1000px;
-  height: 590px;
-}
 
 #foe, #playerCharacter {
   width: 100px;
@@ -71,11 +78,27 @@ div {
 #playerCharacter1 {
   background-image: url(./images/sprites/OnionKnight1.png);
   background-repeat: no-repeat;
+  background-size: 90%;
+}
+
+#playerCharacter2 {
+  background-image: url(./images/sprites/WhiteMage1.png);
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+
+#playerCharacter3 {
+  background-image: url(./images/sprites/BlackMage1.png);
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+
+#playerCharacter1, #playerCharacter2, #playerCharacter3 {
   height: 150px;
   width: 150px;
 }
 
-#playerCharacter1 p {
+#playerCharacter1 p, #playerCharacter2 p, #playerCharacter3 p {
   line-height: 300px;
   font-size: 50px;
   color: #FFF;

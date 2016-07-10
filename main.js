@@ -85,7 +85,14 @@ partyMemberArray.push(blackMage);
 
 // Menu stats, etc.
 
-$('#fighterStats').html("FIGHTER: " + fighter.hp + "/" + fighter.defaultHp);
+// Menu stats, etc.
+
+function healthBarsUpdate() {
+$('#fighterStats').html("FIGHTER: <span>" + fighter.hp + "/" + fighter.defaultHp + "</span><br>"
+  + "WHITE MAGE: <span>" + whiteMage.hp + "/" + whiteMage.defaultHp + "</span><br>"
+  + "BLACK MAGE: <span>" + blackMage.hp + "/" + blackMage.defaultHp + "</span><br>"
+  );
+}
 
 
 
@@ -153,10 +160,11 @@ function nextAction(val){
     turnOptions(whiteMage);
 
     $('#cureBtn').on('click', function(){
+
     // unbind "click" handler
     $('#attackButton').off('click');
     $('#cureBtn').off('click');
-    readNextToken();
+
     });
 
     $('#attackButton').on('click', function(){
@@ -183,6 +191,13 @@ function nextAction(val){
   readNextToken();
   });
 
+  $('#fireBtn').on('click', function(){
+  // unbind "click" handler
+  $('#fireBtn').off('click');
+  $('#attackButton').off('click');
+  readNextToken();
+  });
+
   break;
 
   default: 
@@ -196,27 +211,52 @@ function nextAction(val){
   function turnOptions(character) {
     // options: Attack, Item
     thisCharacter = character
-
-    $('#attackButton').on('click', function(){
-      attackCalc(thisCharacter);
-
-    });
-
-    $('#itemsButton').on('click', function(){
-      itemsMenu();
-    });
   // will need a function for the using of items.
-
     // Magic menus
 
     if (thisCharacter === whiteMage){
-
       $('#cureBtn').on('click', function(){
-        castCure(fighter);
-      });
-    };
-  };
+        targetSelect();
+       });
 
+      $('#attackButton').on('click', function(){
+        attackCalc(thisCharacter);
+
+      });
+    }
+
+
+    else if (character === blackMage) {
+
+        $('#fireBtn').on('click', function(){
+          castFire(ifrit);
+        });
+      }
+
+    else {
+      $('#attackButton').on('click', function(){
+        attackCalc(thisCharacter);
+      });
+  }
+};
+
+
+function targetSelect() {
+  console.log("Select a party member to cure!");
+
+    $('.PC').on('click', function(){
+      if (this.id === "playerCharacter1") {
+      castCure(fighter);
+    } else if (this.id === "playerCharacter2") {
+      castCure(whiteMage);
+    } else {
+      castCure(blackMage);
+    }
+    })
+
+
+
+  };
 
 
 // Menu for items option
@@ -261,7 +301,7 @@ function attackCalc(attacker) {
     defender.hp = defenderHpDown;
 
     console.log(attacker.name + " did " + damageDone + " damage to the " + defender.name + ".");
-    console.log(defender.name + "'s HP is now: " + defenderHpDown + "/" + "2000");
+    console.log(defender.name + "'s HP is now: " + defenderHpDown + "/" + defender.defaultHp);
     $('#foe').html("<p>" + defenderHpDown + "/" + defender.defaultHp + "</p>");
 
     actionsChosen++;
@@ -271,6 +311,10 @@ function attackCalc(attacker) {
       $('#foe').html("KO!");
       gameOver();
     };
+
+    healthBarsUpdate();
+
+
   };
 
   //  ========= Cure spell ===============
@@ -278,8 +322,6 @@ function attackCalc(attacker) {
 function castCure(target) {
 
   if (current_character === whiteMage) {
-
-    var target = target;
 
     var multiplier = function (min,max){
         return Math.floor(Math.random(1)*(max-min+1)+min);
@@ -292,18 +334,43 @@ function castCure(target) {
     target.hp = targetHealed;
 
     console.log("WHITE MAGE healed " + target.name + " for " + cureHpUp + " HP!");
-    console.log(target.name + "'s HP is now: " + target.hp + "/" + "2000");
+    console.log(target.name + "'s HP is now: " + target.hp + "/" +  target.defaultHp);
 
 
       if (target.hp > target.defaultHp) {
         target.hp = target.defaultHp;
-      }
+      };
 
     $('#playerCharacter1').html("<p>" + target.hp + "/" + target.defaultHp + "</p>");
 
-    } else {
-      console.log("Only WHM can cure!");
-    }
+    } 
+
+    healthBarsUpdate();
+    readNextToken();
+
+};
+
+// Black Mage's Fire Spell ==========
+
+function castFire(target) {
+
+  target = ifrit;
+
+    var multiplier = function (min,max){
+        return Math.floor(Math.random(1)*(max-min+1)+min);
+    };
+
+    var fireDmg = (blackMage.mag * multiplier(4,5) + multiplier(65, 135));
+
+    // var fireDmgDone = target.hp - fireDmg;
+
+    target.hp = target.hp - fireDmg;
+
+    console.log("BLACK MAGE cast FIRE! " + target.name + " took " + fireDmg + " damage!");
+    console.log(target.name + "'s HP is now: " + target.hp + "/" + target.defaultHp);
+    $('#foe').html("<p>" + target.hp + "/" + target.defaultHp + "</p>");
+
+    healthBarsUpdate();
 
 };
 
@@ -330,7 +397,7 @@ function foeAttack() {
     defender.hp = defenderHpDown;
 
     console.log(attacker.name + " did " + damageDone + " damage to the " + defender.name + ".");
-    console.log(defender.name + "'s HP is now: " + defenderHpDown + "/" + "2000");
+    console.log(defender.name + "'s HP is now: " + defenderHpDown + "/" + defender.defaultHp);
       $('#playerCharacter1').html("<p>" + defenderHpDown + "/" + defender.defaultHp + "</p>");
 
     if (defender.hp < 1) {
@@ -338,13 +405,15 @@ function foeAttack() {
       $('#playerCharacter1').html("<p>KO!</p>");
       gameOver();
     }
-
+    healthBarsUpdate();
   };
 
 
 function gameOver() {
   alert("Game over!");
 };
+
+
 
 
 

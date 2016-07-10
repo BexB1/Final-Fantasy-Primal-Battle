@@ -13,17 +13,17 @@
 <center>
 
 <h1>Final Fantasy : Primal Battle </h1>
-
-<div id="wrapper">
+<button id="start">START</button>
+<!-- <div id="wrapper"> -->
 
 
 
   <div id="foe"><!-- <img src="./images/sprites/Titan.png" /> --></div>
 
   <div id="pcStack">
-    <div id="playerCharacter1"></div>
-    <div id="playerCharacter2"><!-- <img src="./images/sprites/OnionKnight1.png" height="100px" /> --></div>
-    <div id="playerCharacter3"><!-- <img src="./images/sprites/OnionKnight1.png" height="100px" /> --></div>
+    <div id="playerCharacter1" class="PC"></div>
+    <div id="playerCharacter2" class="PC"></div>
+    <div id="playerCharacter3" class="PC"></div>
   </div>
 
 
@@ -32,9 +32,11 @@
   <div id="foeSelect">Menu left</div>
 
 
-  <div id="partyMenu">  <h3 id="fighterStats"></h3>
+  <div id="partyMenu">  
+  <div id="fighterStats"></div>
   <button id="attackButton">Attack!</button>
   <button id="cureBtn">CURE</button>
+  <button id="fireBtn">FIRE</button>
   <button id="itemsButton">Items</button>
 
   </div>
@@ -44,9 +46,8 @@
 
 
 </div>
-</div>
+<!-- </div> -->
 
-<button id="start">START</button>
 </center>
 <script type="text/javascript" src="main.js"></script>
 </body>
