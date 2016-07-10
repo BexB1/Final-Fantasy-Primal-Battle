@@ -67,18 +67,15 @@ function PartyMember(name, atk, str, def, mag, hp, defaultHp, mp) {
 };
 
 var partyMemberArray = [];
-var actionsChosen = 0;
 
 var current_character;
 // the stats for the party members
 
 var fighter = new PartyMember("FIGHTER", 55, 75, 25, 0, 2000, 2000, 0);
-
-partyMemberArray.push(fighter);
-
 var blackMage = new PartyMember("BLACK MAGE", 55, 35, 10, 75, 1000, 1000, 500);
 var whiteMage = new PartyMember("WHITE MAGE", 55, 35, 10, 65, 1000, 1000, 500);
 
+partyMemberArray.push(fighter);
 partyMemberArray.push(whiteMage);
 partyMemberArray.push(blackMage);
 
@@ -126,8 +123,8 @@ function readNextToken() {
   token++;
     if (token === partyMemberArray.length) {
       console.log('end of turn');
-      foeAttack();
       token = 0;
+      foeAttackTarget();
     }
   readToken(token);
 };
@@ -159,19 +156,18 @@ function nextAction(val){
 
     turnOptions(whiteMage);
 
-    $('#cureBtn').on('click', function(){
-
-    // unbind "click" handler
-    $('#attackButton').off('click');
-    $('#cureBtn').off('click');
-
-    });
 
     $('#attackButton').on('click', function(){
     // unbind "click" handler
     $('#cureBtn').off('click');
     $('#attackButton').off('click');
     readNextToken();
+    });
+
+    $('#cureBtn').on('click', function(){
+    // unbind "click" handler
+    $('#cureBtn').off('click');
+    $('#attackButton').off('click');
     });
 
   break;
@@ -186,7 +182,7 @@ function nextAction(val){
 
   $('#attackButton').on('click', function(){
   // unbind "click" handler
-  turnOptions(blackMage);
+  // turnOptions(blackMage);
   $('#attackButton').off('click');
   readNextToken();
   });
@@ -202,28 +198,32 @@ function nextAction(val){
 
   default: 
   console.log("Turn ended.");
+ 
   break;
   };
   }
 
-// Function for the menu options.
+
+
+// === Function for the menu options.
 
   function turnOptions(character) {
-    // options: Attack, Item
-    thisCharacter = character
+
   // will need a function for the using of items.
+if (character === fighter || character === whiteMage || character === blackMage) {
+  $('#attackButton').on('click', function(){
+      attackCalc(character);
+    });
+}
+
     // Magic menus
 
-    if (thisCharacter === whiteMage){
+    if (character === whiteMage) {
+
       $('#cureBtn').on('click', function(){
         targetSelect();
        });
-
-      $('#attackButton').on('click', function(){
-        attackCalc(thisCharacter);
-
-      });
-    }
+     }
 
 
     else if (character === blackMage) {
@@ -231,14 +231,9 @@ function nextAction(val){
         $('#fireBtn').on('click', function(){
           castFire(ifrit);
         });
-      }
+      };
+}
 
-    else {
-      $('#attackButton').on('click', function(){
-        attackCalc(thisCharacter);
-      });
-  }
-};
 
 
 function targetSelect() {
@@ -304,8 +299,6 @@ function attackCalc(attacker) {
     console.log(defender.name + "'s HP is now: " + defenderHpDown + "/" + defender.defaultHp);
     $('#foe').html("<p>" + defenderHpDown + "/" + defender.defaultHp + "</p>");
 
-    actionsChosen++;
-
     if (defender.hp < 1) {
       console.log(attacker.name + " has defeated the " + defender.name + "!");
       $('#foe').html("KO!");
@@ -339,12 +332,10 @@ function castCure(target) {
 
       if (target.hp > target.defaultHp) {
         target.hp = target.defaultHp;
-      };
+      }
+    }; 
 
     $('#playerCharacter1').html("<p>" + target.hp + "/" + target.defaultHp + "</p>");
-
-    } 
-
     healthBarsUpdate();
     readNextToken();
 
@@ -374,13 +365,21 @@ function castFire(target) {
 
 };
 
+// Foe attack round =====
 
-// Foe attack round
+  foeAttackTarget = function() {
+      var randomIndex = Math.floor(Math.random() * 3);
+      var targets = partyMemberArray;
+
+      this.target = targets[randomIndex];
+      foeAttack(this.target);
+  };
+
 
 function foeAttack() {
 
   attacker = ifrit;
-  defender = fighter;
+  defender = target;
 
     var physDiff = defender.def - attacker.str;
 
