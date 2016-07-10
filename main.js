@@ -64,6 +64,7 @@ function PartyMember(name, atk, str, def, mag, hp, defaultHp, mp) {
   this.hp = hp;
   this.defaultHp = defaultHp;
   this.mp = mp;
+  this.KO = false;
 };
 
 var partyMemberArray = [];
@@ -71,14 +72,15 @@ var partyMemberArray = [];
 var current_character;
 // the stats for the party members
 
-var fighter = new PartyMember("FIGHTER", 55, 75, 25, 0, 2000, 2000, 0);
-var blackMage = new PartyMember("BLACK MAGE", 55, 35, 10, 75, 1000, 1000, 500);
-var whiteMage = new PartyMember("WHITE MAGE", 55, 35, 10, 65, 1000, 1000, 500);
+var fighter = new PartyMember("FIGHTER", 55, 75, 25, 0, 2000, 2000, 0, false);
+var blackMage = new PartyMember("BLACK MAGE", 55, 35, 10, 75, 1000, 1000, 500, false);
+var whiteMage = new PartyMember("WHITE MAGE", 55, 35, 10, 75, 1000, 1000, 500, false);
 
 partyMemberArray.push(fighter);
 partyMemberArray.push(whiteMage);
 partyMemberArray.push(blackMage);
 
+// Lose conditions
 
 // Menu stats, etc.
 
@@ -91,7 +93,7 @@ $('#fighterStats').html("FIGHTER: <span>" + fighter.hp + "/" + fighter.defaultHp
   );
 }
 
-
+healthBarsUpdate();
 
 // The monsters constructor object
 function Enemy(name, atk, str, def, mag, hp, mp) {
@@ -101,12 +103,19 @@ function Enemy(name, atk, str, def, mag, hp, mp) {
   this.def = def;
   this.mag = mag;
   this.hp = hp;
-  this.defaultHp = 2000;
+  this.defaultHp = 5000;
   this.mp = mp;
 };
 
 // The stats for the monsters.
-var ifrit = new Enemy("IFRIT", 75, 75, 95, 75, 2000, 2000);
+var ifrit = new Enemy("IFRIT", 75, 75, 95, 75, 5000, 2000);
+
+
+// Monster special moves
+
+var ifritMoves = [0, 0, 1, 0, 0];
+
+
 
 
 var turn = partyMemberArray;
@@ -124,7 +133,7 @@ function readNextToken() {
     if (token === partyMemberArray.length) {
       console.log('end of turn');
       token = 0;
-      foeAttackTarget();
+      setTimeout(foeMoveRandom(), 5000);
     }
   readToken(token);
 };
@@ -136,7 +145,7 @@ function nextAction(val){
   case fighter:
 
     current_character = fighter;
-    console.log("It's FIGHTER'S turn!");
+    $('#turnAnnouncer').html("It's FIGHTER'S turn!");
 
     turnOptions(fighter);
 
@@ -152,7 +161,7 @@ function nextAction(val){
   case whiteMage:
 
     current_character = whiteMage;
-    console.log("It's WHITE MAGE'S turn!");
+    $('#turnAnnouncer').html("It's WHITE MAGE'S turn!");
 
     turnOptions(whiteMage);
 
@@ -175,7 +184,7 @@ function nextAction(val){
   case blackMage:
 
   current_character = blackMage;
-  console.log("It's BLACK MAGE'S turn!");
+  $('#turnAnnouncer').html("It's BLACK MAGE'S turn!");
 
   turnOptions(blackMage);
 
@@ -237,7 +246,7 @@ if (character === fighter || character === whiteMage || character === blackMage)
 
 
 function targetSelect() {
-  console.log("Select a party member to cure!");
+  $('#turnAnnouncer').html("Select a party member to cure!");
 
     $('.PC').on('click', function(){
       if (this.id === "playerCharacter1") {
@@ -295,12 +304,12 @@ function attackCalc(attacker) {
 
     defender.hp = defenderHpDown;
 
-    console.log(attacker.name + " did " + damageDone + " damage to the " + defender.name + ".");
-    console.log(defender.name + "'s HP is now: " + defenderHpDown + "/" + defender.defaultHp);
+    $('#damageAnnouncer').html(attacker.name + " did " + damageDone + " damage to the " + defender.name + ".");
+    $('#turnAnnouncer').html(defender.name + "'s HP is now: " + defenderHpDown + "/" + defender.defaultHp);
     $('#foe').html("<p>" + defenderHpDown + "/" + defender.defaultHp + "</p>");
 
     if (defender.hp < 1) {
-      console.log(attacker.name + " has defeated the " + defender.name + "!");
+      $('#turnAnnouncer').html(attacker.name + " has defeated the " + defender.name + "!");
       $('#foe').html("KO!");
       gameOver();
     };
@@ -326,8 +335,8 @@ function castCure(target) {
 
     target.hp = targetHealed;
 
-    console.log("WHITE MAGE healed " + target.name + " for " + cureHpUp + " HP!");
-    console.log(target.name + "'s HP is now: " + target.hp + "/" +  target.defaultHp);
+    $('#damageAnnouncer').html("WHITE MAGE healed " + target.name + " for " + cureHpUp + " HP!");
+    $('#turnAnnouncer').html(target.name + "'s HP is now: " + target.hp + "/" +  target.defaultHp);
 
 
       if (target.hp > target.defaultHp) {
@@ -335,7 +344,7 @@ function castCure(target) {
       }
     }; 
 
-    $('#playerCharacter1').html("<p>" + target.hp + "/" + target.defaultHp + "</p>");
+    // $('#playerCharacter1').html("<p>" + target.hp + "/" + target.defaultHp + "</p>");
     healthBarsUpdate();
     readNextToken();
 
@@ -357,8 +366,8 @@ function castFire(target) {
 
     target.hp = target.hp - fireDmg;
 
-    console.log("BLACK MAGE cast FIRE! " + target.name + " took " + fireDmg + " damage!");
-    console.log(target.name + "'s HP is now: " + target.hp + "/" + target.defaultHp);
+    $('#damageAnnouncer').html("BLACK MAGE cast FIRE! " + target.name + " took " + fireDmg + " damage!");
+    $('#turnAnnouncer').html(target.name + "'s HP is now: " + target.hp + "/" + target.defaultHp);
     $('#foe').html("<p>" + target.hp + "/" + target.defaultHp + "</p>");
 
     healthBarsUpdate();
@@ -367,7 +376,21 @@ function castFire(target) {
 
 // Foe attack round =====
 
-  foeAttackTarget = function() {
+var foeMoveRandom = function() {
+  var randomMove = Math.floor(Math.random() * 5);
+  var moves = ifritMoves;
+
+  this.move = moves[randomMove];
+
+  if (this.move === 1) {
+    foeBigAttack();
+  } else {
+    foeAttackTarget();
+  }
+};
+
+
+foeAttackTarget = function() {
       var randomIndex = Math.floor(Math.random() * 3);
       var targets = partyMemberArray;
 
@@ -395,26 +418,71 @@ function foeAttack() {
 
     defender.hp = defenderHpDown;
 
-    console.log(attacker.name + " did " + damageDone + " damage to the " + defender.name + ".");
-    console.log(defender.name + "'s HP is now: " + defenderHpDown + "/" + defender.defaultHp);
-      $('#playerCharacter1').html("<p>" + defenderHpDown + "/" + defender.defaultHp + "</p>");
+    $('#damageAnnouncer').html(attacker.name + " did " + damageDone + " damage to the " + defender.name + ".");
+    $('#turnAnnouncer').html(defender.name + "'s HP is now: " + defenderHpDown + "/" + defender.defaultHp);
+      // $('#playerCharacter1').html("<p>" + defenderHpDown + "/" + defender.defaultHp + "</p>");
 
     if (defender.hp < 1) {
-      console.log(attacker.name + " has defeated the " + defender.name + "!");
-      $('#playerCharacter1').html("<p>KO!</p>");
+      $('#turnAnnouncer').html(attacker.name + " has defeated the " + defender.name + "!");
+      // $('#playerCharacter1').html("<p>KO!</p>");
+      defender.KO = true;
+      healthCheck();
       gameOver();
     }
     healthBarsUpdate();
   };
 
+  // Big attack
+
+  function foeBigAttack() {
+
+    console.log("BIG ATTACK!");
+
+      var multiplier = function (min,max) {
+          return Math.floor(Math.random(1)*(max-min+1)+min);
+      };
+
+      var defenderHpDown = (35 * multiplier(3,4) + multiplier(25, 90));
+
+      fighter.hp = fighter.hp - defenderHpDown;
+      whiteMage.hp = whiteMage.hp - defenderHpDown;
+      blackMage.hp = blackMage.hp - defenderHpDown;
+
+      // defender.hp = defenderHpDown;
+
+      console.log("The party takes " + defenderHpDown + " damage!");
+
+      // $('#damageAnnouncer').html(attacker.name + " did " + damageDone + " damage to the " + defender.name + ".");
+      // $('#turnAnnouncer').html(defender.name + "'s HP is now: " + defenderHpDown + "/" + defender.defaultHp);
+      //   // $('#playerCharacter1').html("<p>" + defenderHpDown + "/" + defender.defaultHp + "</p>");
+
+      // if (defender.hp < 1) {
+      //   $('#turnAnnouncer').html(attacker.name + " has defeated the " + defender.name + "!");
+      //   // $('#playerCharacter1').html("<p>KO!</p>");
+      //   gameOver();
+      $('#turnAnnouncer').html("The party takes " + defenderHpDown + " damage!");
+        // $('#playerCharacter1').html("<p>KO!</p>");
+        healthCheck();
+        gameOver();
+      healthBarsUpdate();
+    };
+
 
 function gameOver() {
-  alert("Game over!");
+  if (fighter.KO === true && whiteMage.KO === true && blackMage.KO === true) {
+    alert("Game over!");
+  }
 };
 
 
 
-
+function healthCheck() {
+  for (var i = 0; i < partyMemberArray.length; i++) {
+    if (partyMemberArray[i].Hp < 1) {
+      this.PartyMember.KO = true;
+  }
+}
+};
 
 
 
