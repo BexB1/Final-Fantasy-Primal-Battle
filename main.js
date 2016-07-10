@@ -368,7 +368,7 @@ function castFire(target) {
 
     $('#damageAnnouncer').html("BLACK MAGE cast FIRE! " + target.name + " took " + fireDmg + " damage!");
     $('#turnAnnouncer').html(target.name + "'s HP is now: " + target.hp + "/" + target.defaultHp);
-    $('#foeBar').html(defenderHpDown + "/" + defender.defaultHp);
+    $('#foeBar').html(target.hp + "/" + target.defaultHp);
 
     healthBarsUpdate();
 
