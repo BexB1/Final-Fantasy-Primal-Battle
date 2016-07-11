@@ -77,25 +77,28 @@ $('#waitBtn').on('click', function(){
   readNextToken();
 });
 
-$('.PC').on('click', function(){
-  if (current_character === whiteMage){
-    $(this).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
-  };
-  if(current_character === whiteMage) {
-    if (this.id === "playerCharacter1") {
-      if (fighter.hp > 0){
-        castCure(fighter);
-      }
-    } else if (this.id === "playerCharacter2") {
-      if (whiteMage.hp > 0) {
-        castCure(whiteMage);
-      }
-    } else {
-      if (blackMage.hp > 0) {
-       castCure(blackMage);
+$('#cureBtn').on('click', function() {
+  $('#damageAnnouncer').html("Select a party member to cure!");
+  $('.PC').on('click', function(){
+    if (current_character === whiteMage){
+      $(this).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
+    };
+    if(current_character === whiteMage) {
+      if (this.id === "playerCharacter1") {
+        if (fighter.hp > 0){
+          castCure(fighter);
+        }
+      } else if (this.id === "playerCharacter2") {
+        if (whiteMage.hp > 0) {
+          castCure(whiteMage);
+        }
+      } else {
+        if (blackMage.hp > 0) {
+         castCure(blackMage);
+        }
       }
     }
-  }
+  });
 });
 
 $('#fireBtn').on('click', function(){
@@ -204,7 +207,6 @@ function ko_check() {
     $('#turnAnnouncer').html("It's <span>FIGHTER'S</span> turn!");
   } else if (current_character === whiteMage) {
     $('#turnAnnouncer').html("It's <span>WHITE MAGE'S</span> turn!");
-    $('#damageAnnouncer').html("Select a party member to cure!");
   } else if (current_character === blackMage) {
     $('#turnAnnouncer').html("It's <span>BLACK MAGE'S</span> turn!");
   } else if (current_character === titan) {
