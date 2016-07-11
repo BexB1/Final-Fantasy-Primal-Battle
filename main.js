@@ -4,7 +4,6 @@ var bgm = new Audio;
 bgm.src = "./sounds/bgm/Battle.mp3";
 bgm.play();
 
-
 // Title screen
 
 $('#start').on('click', function (){
@@ -80,13 +79,17 @@ var current_character;
 var fighter = new PartyMember("FIGHTER", 55, 75, 25, 0, 2000, 2000, 0, false);
 var blackMage = new PartyMember("BLACK MAGE", 55, 35, 10, 75, 1000, 1000, 500, false);
 var whiteMage = new PartyMember("WHITE MAGE", 55, 35, 10, 75, 1000, 1000, 500, false);
-var ifrit = new PartyMember("IFRIT", 75, 75, 95, 75, 5000, 5000, 1000, false);
+var titan = new PartyMember("TITAN", 75, 100, 95, 75, 5000, 5000, 1000, false);
 
 partyMemberArray.push(fighter);
 partyMemberArray.push(whiteMage);
 partyMemberArray.push(blackMage);
-partyMemberArray.push(ifrit);
+partyMemberArray.push(titan);
 
+var turn = partyMemberArray;
+var token = 0, state;
+
+readToken(token); 
 // Lose conditions
 
 // Menu stats, etc.
@@ -97,34 +100,36 @@ function healthBarsUpdate() {
 $('#fighterStats').html("FIGHTER: <span>" + fighter.hp + "/" + fighter.defaultHp + "</span><br>"
   + "WHITE MAGE: <span>" + whiteMage.hp + "/" + whiteMage.defaultHp + "</span><br>"
   + "BLACK MAGE: <span>" + blackMage.hp + "/" + blackMage.defaultHp + "</span><br>"
-  );
-}
+  )
+$('#foeSelect').html("Titan: <span>" + titan.hp + "/" + titan.defaultHp + "</span><br>")
+};
 
 $('#damageAnnouncer').html("Fight!");
 
 healthBarsUpdate();
 
-var ifritMoves = [0, 0, 1, 0, 0];
+var titanMoves = [0, 0, 1, 0, 0];
 
 
 // The turn order =========
 
-var turn = partyMemberArray;
-var token = 0, state;
+// var turn = partyMemberArray;
+// var token = 0, state;
 
-function readToken(token) {  
+function readToken(token) { 
+  console.log("readToken triggered!"); 
+  console.log(token);
   state = turn[token];
   nextAction(state);
 };
 
-readToken(token); 
 
 function readNextToken() {
   token++;
-    if (token === partyMemberArray.length) {
-      console.log('end of turn');
-      token = 0;
-    }
+  if (token === partyMemberArray.length) {
+    console.log('end of turn');
+    token = 0;
+  }
   readToken(token);
 };
 
@@ -134,17 +139,19 @@ function nextAction(val){
 
   case fighter:
 
-
     current_character = fighter;
-    $('#turnAnnouncer').html("It's FIGHTER'S turn!");
+
+    ko_check();
+
+    // $('#turnAnnouncer').html("It's FIGHTER'S turn!");
 
     turnOptions(fighter);
 
-    $('#attackButton').on('click', function(){
-    // unbind "click" handler
-    $('#attackButton').off('click');
-    readNextToken();
-    });
+    // $('#attackButton').on('click', function(){
+    //   // unbind "click" handler
+    //   $('#attackButton').off('click');
+    //   // readNextToken();
+    // });
 
   break;
 
@@ -152,60 +159,41 @@ function nextAction(val){
   case whiteMage:
 
     current_character = whiteMage;
-    $('#turnAnnouncer').html("It's WHITE MAGE'S turn!");
 
-    turnOptions(whiteMage);
+    ko_check();
 
+    // $('#turnAnnouncer').html("It's WHITE MAGE'S turn!");
 
-    $('#attackButton').on('click', function(){
-    // unbind "click" handler
-    $('#cureBtn').off('click');
-    $('#attackButton').off('click');
-    readNextToken();
-    });
-
-    $('#cureBtn').on('click', function(){
-    // unbind "click" handler
-    $('#cureBtn').off('click');
-    $('#attackButton').off('click');
-    });
+    turnOptions(whiteMage); // add eventListener
 
   break;
+
 
   case blackMage:
 
-  current_character = blackMage;
-  $('#turnAnnouncer').html("It's BLACK MAGE'S turn!");
+    current_character = blackMage;
 
-  turnOptions(blackMage);
+    ko_check();
+    // $('#turnAnnouncer').html("It's BLACK MAGE'S turn!");
 
+    turnOptions(blackMage);
 
-  $('#attackButton').on('click', function(){
-  // unbind "click" handler
-  // turnOptions(blackMage);
-  $('#attackButton').off('click');
-  readNextToken();
-  });
+    break;
 
-  $('#fireBtn').on('click', function(){
-  // unbind "click" handler
-  $('#fireBtn').off('click');
-  $('#attackButton').off('click');
-  readNextToken();
-  });
+  case titan:
 
-  break;
+  current_character = titan;
 
-  case ifrit:
-
-
-  current_character = ifrit;
-  $('#turnAnnouncer').html("The enemy is going to attack!");
+  ko_check();
+  // $('#turnAnnouncer').html("The enemy is going to attack!");
 
   setTimeout(function(){
     foeMoveRandom();
-    readNextToken();
   }, 3000);
+
+  setTimeout(function(){
+    readNextToken();
+  }, 4000);
 
 
 
@@ -219,42 +207,63 @@ function nextAction(val){
   }
 
 
+  // Check if current_character KO. If so, skip turn.
+
+  function ko_check() {
+    if (current_character.KO === true) {
+      readNextToken();
+    } else if (current_character === fighter) {
+      $('#turnAnnouncer').html("It's FIGHTER'S turn!");
+    } else if (current_character === whiteMage) {
+      $('#turnAnnouncer').html("It's WHITE MAGE'S turn!");
+    } else if (current_character === blackMage) {
+      $('#turnAnnouncer').html("It's BLACK MAGE'S turn!");
+    } else if (current_character === titan) {
+      $('#turnAnnouncer').html("The enemy is going to attack!");
+    }
+  }
+
+
 
 // === Function for the menu options.
 
   function turnOptions(character) {
 
-  // will need a function for the using of items.
-if (character === fighter || character === whiteMage || character === blackMage) {
-  $('#attackButton').on('click', function(){
-      attackCalc(character);
-    });
-}
-
-    // Magic menus
-
     if (character === whiteMage) {
 
       $('#cureBtn').on('click', function(){
         targetSelect();
-       });
+        $(this).off("click");
+      });
      }
+
+    // will need a function for the using of items.
+    else if (character === fighter || character === whiteMage || character === blackMage) {
+      $('#attackButton').on('click', function(){
+        attackCalc(character);
+        $(this).off("click");
+      });
+    }
+
+    // Magic menus
 
 
     else if (character === blackMage) {
 
-        $('#fireBtn').on('click', function(){
-          castFire(ifrit);
-        });
-      };
-}
+      $('#fireBtn').on('click', function(){
+        castFire(titan);
+        $(this).off("click");
+        // $('#attackButton').off('click');
+      });
+    };
+};
 
 
 
 function targetSelect() {
   $('#damageAnnouncer').html("Select a party member to cure!");
 
-    $('.PC').on('click', function(){
+    $('.PC').off('click').on('click', function(){
       if (this.id === "playerCharacter1") {
       castCure(fighter);
     } else if (this.id === "playerCharacter2") {
@@ -262,18 +271,27 @@ function targetSelect() {
     } else {
       castCure(blackMage);
     }
-    })
 
+    // $('body').after('<img src="./images/sprites/Heal.gif" height="400px" id="HealGif" />');
 
+    // setTimeout(function(){
+    //   $('#HealGif').remove();
+    // }, 2000);
 
-  };
+    // setTimeout(function(){
+    //   console.log("Reading next token in targetSelect");
+    //   readNextToken();
+    // }, 1000);
+
+  });
+  }
 
 
 // Menu for items option
 
-function itemsMenu() {
-  $('#foeSelect').html("HI-POTS");
-};
+// function itemsMenu() {
+//   $('#foeSelect').html("HI-POTS");
+// };
 
 
 // function ActionDefn
@@ -294,7 +312,7 @@ function itemsMenu() {
 function attackCalc(attacker) {
 
   var attacker = attacker;
-  var defender = ifrit;
+  var defender = titan;
 
     var physDiff = defender.def - attacker.str;
 
@@ -325,12 +343,12 @@ function attackCalc(attacker) {
     if (defender.hp < 1) {
       $('#damageAnnouncer').html(attacker.name + " has defeated the " + defender.name + "!");
       $('#foe').html("KO!");
-      gameOver();
     };
 
-
+    healthCheck();
+    gameOver();
     healthBarsUpdate();
-
+    readNextToken();
 
   };
 
@@ -363,20 +381,18 @@ function castCure(target) {
       }
     }; 
 
-    // $('#playerCharacter1').html("<p>" + target.hp + "/" + target.defaultHp + "</p>");
-    healthBarsUpdate();
+    // $('#playerCharacter1').html("<p>" + target.hp + "/" + target.defaultHp + "</p>")
 
-    setTimeout(function(){
-      readNextToken();
-    }, 1000);
+    healthCheck();
+    gameOver();
+    healthBarsUpdate();
+    readNextToken();
 
 };
 
 // Black Mage's Fire Spell ==========
 
 function castFire(target) {
-
-  target = ifrit;
 
     var multiplier = function (min,max){
         return Math.floor(Math.random(1)*(max-min+1)+min);
@@ -407,21 +423,24 @@ function castFire(target) {
     $('#damageAnnouncer').html("BLACK MAGE cast FIRE! " + target.name + " took " + fireDmg + " damage!");
     // $('#turnAnnouncer').html(target.name + "'s HP is now: " + target.hp + "/" + target.defaultHp);
 
+    healthCheck();
+    gameOver();
     healthBarsUpdate();
+    readNextToken();
 };
 
 // Foe attack round =====
 
 var foeMoveRandom = function() {
   var randomMove = Math.floor(Math.random() * 5);
-  var moves = ifritMoves;
+  var moves = titanMoves;
 
   this.move = moves[randomMove];
 
   if (this.move === 1) {
-    setTimeout(foeBigAttack(), 2000);
+    foeBigAttack();
   } else {
-    setTimeout(foeAttackTarget(), 2000);
+    foeAttackTarget();
   }
 };
 
@@ -429,15 +448,21 @@ var foeMoveRandom = function() {
 foeAttackTarget = function() {
       var randomIndex = Math.floor(Math.random() * 3);
       var targets = partyMemberArray;
+        this.target = targets[randomIndex];
+        foeAttack(this.target);
 
-      this.target = targets[randomIndex];
-      foeAttack(this.target);
-  };
+        // if (this.targets.hp > 1) {
+        //   this.target = targets[randomIndex];
+        //   foeAttack(this.target);
+        // } else {
+        //   foeAttack(this.target+1);
+        // }
+      }
 
 
 function foeAttack() {
 
-  attacker = ifrit;
+  attacker = titan;
   defender = target;
 
     var physDiff = defender.def - attacker.str;
@@ -482,7 +507,7 @@ function foeAttack() {
           return Math.floor(Math.random(1)*(max-min+1)+min);
       };
 
-      var defenderHpDown = (35 * multiplier(3,4) + multiplier(25, 90));
+      var defenderHpDown = (65 * multiplier(3,4) + multiplier(25, 90));
 
       fighter.hp = fighter.hp - defenderHpDown;
       whiteMage.hp = whiteMage.hp - defenderHpDown;
@@ -493,6 +518,10 @@ function foeAttack() {
       var ouchiesIncoming = new Audio;
       ouchiesIncoming.src = "./sounds/effects/FoeAttack.wav";
       ouchiesIncoming.play();
+
+      function shake() {
+      $('#pcStack').effect("shake");
+    };
 
       console.log("The party takes " + defenderHpDown + " damage!");
 
@@ -508,23 +537,27 @@ function foeAttack() {
         // $('#playerCharacter1').html("<p>KO!</p>");
         healthCheck();
         gameOver();
+
       healthBarsUpdate();
     };
 
+    function healthCheck() {
+      for (var i = 0; i < partyMemberArray.length; i++) {
+        if (partyMemberArray[i].Hp < 1) {
+          partyMemberArray[i].KO = true;
+          this.partyMemberArray.hp = 0;
+         }
+      }
+    }
 
 function gameOver() {
   if (fighter.KO === true && whiteMage.KO === true && blackMage.KO === true) {
-    alert("Game over!");
-  }
+    alert("Game over! You lose...");
+  } else if (titan.KO === true) {
+    alert("Game over. You win!");
+  };
 };
 
-function healthCheck() {
-  for (var i = 0; i < partyMemberArray.length; i++) {
-    if (partyMemberArray[i].Hp < 1) {
-      this.PartyMember.KO = true;
-  }
-}
-};
 
 
 

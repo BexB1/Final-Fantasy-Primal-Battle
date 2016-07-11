@@ -2,7 +2,7 @@ body {
   font-family: 'Playfair Display SC', serif;
   background-color: #c6c6ec;
   text-transform: uppercase;
-  background-image: url(./images/backgrounds/grass_bg.png);
+  background-image: url(./images/backgrounds/dungeon_bg.png);
   background-repeat: no-repeat;
   background-size: 100%;
 }
@@ -11,15 +11,21 @@ body {
   border: 1px solid white;
 }*/
 
+#damageAnnouncer {
+  font-size: 25px;
+  line-height: 20px;
+  color: #FFF;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
-#turnAnouncer {
-  width: 200px;
-  font-color: #FFF;
-  font-size: 20px;
+#turnAnnouncer {
+  color: #FFF;
+  font-size: 35px;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 
-#fighterStats {
+#fighterStats, #foeSelect {
   text-align: left;
   color: #FFF;
   padding: 10px;
@@ -35,32 +41,37 @@ body {
 }
 
 #menus {
-  background: linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(34, 63, 158, 1));
+/*  background: linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(34, 63, 158, 1));
   background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(34, 63, 158, 1));
-  background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(34, 63, 158, 1));
+  background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(34, 63, 158, 1));*/
+
+/*  background: linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(34, 63, 158, 1));*/
+  background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.4));
+/*  background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 1), rgba(34, 63, 158, 1));*/
+
   display: inline-block;
   position: fixed;
-  border: 10px solid white;
-  border-radius: 15px;
+/*  border: 10px solid white;*/
+/*  border-radius: 15px;*/
   margin: 0 auto;
   left: 0px;
   bottom: 0px;
   height: 150px;
-  width: 99%;
+  width: 100%;
 }
 
 
-#foe, #playerCharacter {
+/*#foe, #playerCharacter {
   width: 100px;
   height: 100px;
-}
+}*/
 
 #foe {
 /*  background-image: url(./images/sprites/Titan.png);*/
   background-repeat: no-repeat;
   float: left;
   position: relative;
-  top: 0px;
+  top: -50px;
   left: 80px;
   width: 500px;
   height: 600px;
@@ -134,8 +145,13 @@ body {
   position: fixed;
   width: 300px;
   top: 200px;
-  left: 200px;
+  left: 250px;
   z-index: 1;
+}
+
+#HealGif {
+  position: fixed;
+  z-index: 2;
 }
 
 @-webkit-keyframes hvr-pulse {
@@ -257,27 +273,20 @@ body {
   animation-direction: normal, alternate;
 }
 
-@-webkit-keyframes flash {
-  from, 50%, to {
-    opacity: 1;
-  }
-
-  25%, 75% {
-    opacity: 0;
-  }
+@-webkit-keyframes demo {
+    0% {
+        background-color: Yellow;
+        opacity:1;
+    }
+    22% {
+        background-color: Yellow;
+    }
+    77% {
+        background-color: Red;
+    }
+    100% {
+        background-color: #777;
+    }
 }
 
-@keyframes flash {
-  from, 50%, to {
-    opacity: 1;
-  }
 
-  25%, 75% {
-    opacity: 0;
-  }
-}
-
-.flash {
-  -webkit-animation-name: flash;
-  animation-name: flash;
-}
