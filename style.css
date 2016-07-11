@@ -29,11 +29,27 @@ body {
   text-align: left;
   color: #FFF;
   padding: 10px;
-  font-size: 35px;
+  font-size: 30px;
+}
+
+#fighterStats {
+  position: relative;
+  float: right;
+  top: -120px;
+}
+
+#foeSelect {
+  float: left;
 }
 
 #thisStuff {
-  display: inline;
+  color: #FFF;
+  width: 45%;
+}
+
+#thisStuff li {
+  text-decoration: none;
+  list-style: none;
 }
 
 #thisStuff button {
@@ -61,11 +77,6 @@ body {
 }
 
 
-/*#foe, #playerCharacter {
-  width: 100px;
-  height: 100px;
-}*/
-
 #foe {
 /*  background-image: url(./images/sprites/Titan.png);*/
   background-repeat: no-repeat;
@@ -80,16 +91,37 @@ body {
 
 #foe span {
   position: relative;
-  bottom: 100px;
-  font-size: 50px;
-  color: #FFF;
+  top: -500px;
+  left: 100px;
+  font-size: 85px;
+  color: red;
   float: right;
 }
+
+#fhtBar, #whmBar, #blmBar {
+  position: relative;
+  font-size: 35px;
+  color: white;
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  z-index: -1;
+}
+
+#playerCharacter2 span {
+
+}
+
+#playerCharacter3 span {
+
+}
+
 
 #pcStack {
   display: inline-block;
   float: right;
   margin: 15px;
+  width: 200px;
   padding: 15px;
   position: relative;
   right: 200px;
@@ -105,38 +137,33 @@ body {
 }
 
 #playerCharacter1 {
-/*  background-image: url(./images/sprites/OnionKnight1.png);*/
-  background-repeat: no-repeat;
-  background-size: 90%;
   position: relative;
   left: -80px;
+  z-index: 1;
 }
 
 #playerCharacter2 {
-/*  background-image: url(./images/sprites/WhiteMage1.png);*/
-  background-repeat: no-repeat;
-  background-size: 80%;
+
   position: relative;
   left: 75px;
+  z-index: 1;
 }
 
 #playerCharacter3 {
-/*  background-image: url(./images/sprites/BlackMage1.png);*/
-  background-repeat: no-repeat;
-  background-size: 80%;
   position: relative;
   top: 10px;
+  z-index: 1;
 }
 
-#playerCharacter1, #playerCharacter2, #playerCharacter3 {
-  height: 150px;
-  width: 150px;
-}
 
 #playerCharacter1 p, #playerCharacter2 p, #playerCharacter3 p {
   line-height: 300px;
   font-size: 50px;
   color: #FFF;
+}
+
+#winorloss {
+  font-size: 75px;
 }
 
 /* Effects */

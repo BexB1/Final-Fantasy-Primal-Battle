@@ -11,13 +11,11 @@
 <body>
 
 <center>
-
-<!-- <h1>Final Fantasy : Primal Battle </h1> -->
-<!-- <button id="start">START</button> -->
+<div="wrapper">
 
 <h3 id="damageAnnouncer"></h3>
 <h2 id="turnAnnouncer"></h2>
-<!-- <div id="wrapper"> -->
+
 
 
 <div class="FireSprite"></div>
@@ -26,31 +24,28 @@
   </div>
 
   <div id="pcStack">
-    <div id="playerCharacter1" class="PC"><img src="./images/sprites/OnionKnight1.png" class="hvr-pulse" class="hvr-bob" height="155x" /></div>
-    <div id="playerCharacter2" class="PC"><img src="./images/sprites/WhiteMage1.png" class="hvr-pulse" class="hvr-bob" height="155px" /></div>
-    <div id="playerCharacter3" class="PC"><img src="./images/sprites/BlackMage1.png" class="hvr-pulse" class="hvr-bob" height="160px" /></div>
+    <div id="playerCharacter1" class="PC"><img src="./images/sprites/OnionKnight1.png" class="hvr-pulse" height="155x" /></div>
+    <div id="playerCharacter2" class="PC"><img src="./images/sprites/WhiteMage1.png" class="hvr-pulse" height="155px" /></div>
+    <div id="playerCharacter3" class="PC"><img src="./images/sprites/BlackMage1.png" class="hvr-pulse" height="160px" /></div>
   </div>
 
-<!--   <h3 id="damageAnnouncer"></h3>
-  <h2 id="turnAnnouncer"></h2> -->
-
-  
 <div id="menus">
   <div id="foeSelect">Menu left</div>
 
 <div id="thisStuff">
-  <button id="attackButton">Attack!</button>
+  <button id="attackButton">ATTACK</button>
   <button id="cureBtn">CURE</button>
   <button id="fireBtn">FIRE</button>
-  <button id="itemsButton">Items</button>
+  <button id="waitBtn">WAIT</button>
+  <br>
+    <ul>
+      <li>Fighter cannot cast spells.</li>
+      <li>White Mage cannot attack.</li>
+    </ul>
 </div>
 
   <div id="partyMenu">  
   <div id="fighterStats"></div>
-<!--   <button id="attackButton">Attack!</button>
-  <button id="cureBtn">CURE</button>
-  <button id="fireBtn">FIRE</button>
-  <button id="itemsButton">Items</button> -->
 
   </div>
 </div>
@@ -59,8 +54,8 @@
 
 
 </div>
-<!-- </div> -->
 
+</div>
 </center>
 <script type="text/javascript" src="main.js"></script>
 </body>

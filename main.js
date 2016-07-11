@@ -1,45 +1,10 @@
-$(document).ready();
-
-var bgm = new Audio;
+var bgm = new Audio();
 bgm.src = "./sounds/bgm/Battle.mp3";
 bgm.play();
+bgm.loop = true;
 
-// Title screen
-
-$('#start').on('click', function (){
-
-  $('#wrapper').append('<center><h2>select difficulty</h2>' 
-    + '<button id="easyMode">easy</button>' 
-    + '<button id="normalMode">normal</button>' 
-    + '<button id="hardMode">hard</button></center>');
-
-    $('#start').remove();
-
-    $('#easyMode').on('click', function(){
-      console.log("Easy mode selected!");
-    });
-
-    $('#normalMode').on('click', function(){
-      console.log("Normal mode selected!");
-    });
-
-    $('#hardMode').on('click', function(){
-      console.log("Hard mode selected!");
-    });
-
-    $('#wrapper').append('<button id="returnToStart">START MENU</button>');
-
-  $('#returnToStart').on('click', function(){
-    $('#easyMode').remove();
-    $('#normalMode').remove();
-    $('#hardMode').remove();
-
-
-    $('#wrapper').append('<button id="start">START</button>');
-
-  })
-});
-
+var fanfare = new Audio();
+fanfare.src = "./sounds/bgm/Fanfare.mp3";
 
 
 // ===== BASIC DAMAGE CALCULATION =====
@@ -62,7 +27,7 @@ $('#start').on('click', function (){
 function PartyMember(name, atk, str, def, mag, hp, defaultHp, mp, KO) {
   this.name = name;
   this.atk = atk;
-  this.str = str,
+  this.str = str;
   this.def = def;
   this.mag = mag;
   this.hp = hp;
@@ -73,51 +38,97 @@ function PartyMember(name, atk, str, def, mag, hp, defaultHp, mp, KO) {
 
 var partyMemberArray = [];
 
-var current_character;
+var current_character = fighter;
+
 // the stats for the party members
 
-var fighter = new PartyMember("FIGHTER", 55, 75, 25, 0, 2000, 2000, 0, false);
+var fighter = new PartyMember("FIGHTER", 55, 75, 25, 0, 1500, 1500, 0, false);
 var blackMage = new PartyMember("BLACK MAGE", 55, 35, 10, 75, 1000, 1000, 500, false);
-var whiteMage = new PartyMember("WHITE MAGE", 55, 35, 10, 75, 1000, 1000, 500, false);
-var titan = new PartyMember("TITAN", 75, 100, 95, 75, 5000, 5000, 1000, false);
+var whiteMage = new PartyMember("WHITE MAGE", 55, 35, 10, 75, 1250, 1250, 500, false);
+var titan = new PartyMember("TITAN", 75, 90, 95, 75, 2000, 5000, 5000, false);
 
 partyMemberArray.push(fighter);
 partyMemberArray.push(whiteMage);
 partyMemberArray.push(blackMage);
 partyMemberArray.push(titan);
 
+var titanMoves = [0, 0, 1, 0, 0];
+
 var turn = partyMemberArray;
 var token = 0, state;
 
-readToken(token); 
-// Lose conditions
+readToken(token);
 
-// Menu stats, etc.
+$('#attackButton').on('click', function() {
+  if(current_character === blackMage || current_character === fighter) {
+    attackCalc(current_character);
 
-// Menu stats, etc.
+      $("#foeCounter").animate({
+        opacity: '0.4'
+      });
+
+      $("#foeCounter").animate({
+        opacity: '1'
+      });
+    }
+  });
+
+$('#waitBtn').on('click', function(){
+  readNextToken();
+});
+
+$('.PC').on('click', function(){
+  if (current_character === whiteMage){
+    $(this).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
+  };
+  if(current_character === whiteMage) {
+    if (this.id === "playerCharacter1") {
+      if (fighter.hp > 0){
+        castCure(fighter);
+      }
+    } else if (this.id === "playerCharacter2") {
+      if (whiteMage.hp > 0) {
+        castCure(whiteMage);
+      }
+    } else {
+      if (blackMage.hp > 0) {
+       castCure(blackMage);
+      }
+    }
+  }
+});
+
+$('#fireBtn').on('click', function(){
+  if(current_character === blackMage) {
+    castFire(titan);
+    $("#foeCounter").animate({
+      opacity: '0.4'
+    });
+
+    $("#foeCounter").animate({
+      opacity: '1'
+  });
+}
+});
+
+
 
 function healthBarsUpdate() {
-$('#fighterStats').html("FIGHTER: <span>" + fighter.hp + "/" + fighter.defaultHp + "</span><br>"
-  + "WHITE MAGE: <span>" + whiteMage.hp + "/" + whiteMage.defaultHp + "</span><br>"
-  + "BLACK MAGE: <span>" + blackMage.hp + "/" + blackMage.defaultHp + "</span><br>"
-  )
-$('#foeSelect').html("Titan: <span>" + titan.hp + "/" + titan.defaultHp + "</span><br>")
+  $('#fighterStats').html("FIGHTER: <span>" + fighter.hp + "/" + fighter.defaultHp + "</span><br>"
+    + "WHITE MAGE: <span>" + whiteMage.hp + "/" + whiteMage.defaultHp + "</span><br>"
+    + "BLACK MAGE: <span>" + blackMage.hp + "/" + blackMage.defaultHp + "</span><br>"
+    );
+  $('#foeSelect').html("Titan: <span>" + titan.hp + "/" + titan.defaultHp + "</span><br>");
 };
 
 $('#damageAnnouncer').html("Fight!");
 
 healthBarsUpdate();
 
-var titanMoves = [0, 0, 1, 0, 0];
-
 
 // The turn order =========
 
-// var turn = partyMemberArray;
-// var token = 0, state;
-
 function readToken(token) { 
-  console.log("readToken triggered!"); 
   console.log(token);
   state = turn[token];
   nextAction(state);
@@ -143,17 +154,7 @@ function nextAction(val){
 
     ko_check();
 
-    // $('#turnAnnouncer').html("It's FIGHTER'S turn!");
-
-    turnOptions(fighter);
-
-    // $('#attackButton').on('click', function(){
-    //   // unbind "click" handler
-    //   $('#attackButton').off('click');
-    //   // readNextToken();
-    // });
-
-  break;
+    break;
 
 
   case whiteMage:
@@ -162,11 +163,7 @@ function nextAction(val){
 
     ko_check();
 
-    // $('#turnAnnouncer').html("It's WHITE MAGE'S turn!");
-
-    turnOptions(whiteMage); // add eventListener
-
-  break;
+    break;
 
 
   case blackMage:
@@ -174,259 +171,182 @@ function nextAction(val){
     current_character = blackMage;
 
     ko_check();
-    // $('#turnAnnouncer').html("It's BLACK MAGE'S turn!");
-
-    turnOptions(blackMage);
 
     break;
 
   case titan:
 
-  current_character = titan;
+    current_character = titan;
 
-  ko_check();
-  // $('#turnAnnouncer').html("The enemy is going to attack!");
+    ko_check();
 
-  setTimeout(function(){
-    foeMoveRandom();
-  }, 3000);
+    setTimeout(function(){
+      foeMoveRandom();
+    }, 3000);
 
-  setTimeout(function(){
-    readNextToken();
-  }, 4000);
-
-
-
-  break;
+    break;
 
   default: 
-  console.log("Turn ended.");
+    console.log("Turn ended.");
  
-  break;
-  };
+    break;
+
   }
+}
 
 
   // Check if current_character KO. If so, skip turn.
 
-  function ko_check() {
-    if (current_character.KO === true) {
-      readNextToken();
-    } else if (current_character === fighter) {
-      $('#turnAnnouncer').html("It's FIGHTER'S turn!");
-    } else if (current_character === whiteMage) {
-      $('#turnAnnouncer').html("It's WHITE MAGE'S turn!");
-    } else if (current_character === blackMage) {
-      $('#turnAnnouncer').html("It's BLACK MAGE'S turn!");
-    } else if (current_character === titan) {
-      $('#turnAnnouncer').html("The enemy is going to attack!");
-    }
+function ko_check() {
+  if (current_character.KO) {
+    readNextToken();
+  } else if (current_character === fighter) {
+    $('#turnAnnouncer').html("It's <span>FIGHTER'S</span> turn!");
+  } else if (current_character === whiteMage) {
+    $('#turnAnnouncer').html("It's <span>WHITE MAGE'S</span> turn!");
+    $('#damageAnnouncer').html("Select a party member to cure!");
+  } else if (current_character === blackMage) {
+    $('#turnAnnouncer').html("It's <span>BLACK MAGE'S</span> turn!");
+  } else if (current_character === titan) {
+    $('#turnAnnouncer').html("The enemy is going to attack!");
   }
+}
 
 
-
-// === Function for the menu options.
-
-  function turnOptions(character) {
-
-    if (character === whiteMage) {
-
-      $('#cureBtn').on('click', function(){
-        targetSelect();
-        $(this).off("click");
-      });
-     }
-
-    // will need a function for the using of items.
-    else if (character === fighter || character === whiteMage || character === blackMage) {
-      $('#attackButton').on('click', function(){
-        attackCalc(character);
-        $(this).off("click");
-      });
-    }
-
-    // Magic menus
-
-
-    else if (character === blackMage) {
-
-      $('#fireBtn').on('click', function(){
-        castFire(titan);
-        $(this).off("click");
-        // $('#attackButton').off('click');
-      });
-    };
-};
-
-
-
-function targetSelect() {
-  $('#damageAnnouncer').html("Select a party member to cure!");
-
-    $('.PC').off('click').on('click', function(){
-      if (this.id === "playerCharacter1") {
-      castCure(fighter);
-    } else if (this.id === "playerCharacter2") {
-      castCure(whiteMage);
-    } else {
-      castCure(blackMage);
-    }
-
-    // $('body').after('<img src="./images/sprites/Heal.gif" height="400px" id="HealGif" />');
-
-    // setTimeout(function(){
-    //   $('#HealGif').remove();
-    // }, 2000);
-
-    // setTimeout(function(){
-    //   console.log("Reading next token in targetSelect");
-    //   readNextToken();
-    // }, 1000);
-
-  });
-  }
-
-
-// Menu for items option
-
-// function itemsMenu() {
-//   $('#foeSelect').html("HI-POTS");
-// };
-
-
-// function ActionDefn
-// (
-//   name,
-//   requiresTarget, 
-//   perform,
-//   toMenu
-// )
-// {
-//   this.name = name;
-//   this.requiresTarget = requiresTarget;
-//   this.perform = perform;
-//   this.toMenu = toMenu;
-// }
-
+// The player attack calculation
 
 function attackCalc(attacker) {
 
-  var attacker = attacker;
-  var defender = titan;
+  var physDiff = titan.def - attacker.str;
 
-    var physDiff = defender.def - attacker.str;
+  var atkDiff = attacker.atk - physDiff;
 
-    var atkDiff = attacker.atk - physDiff;
-
-    var multiplier = function (min,max){
-        return Math.floor(Math.random(1)*(max-min+1)+min);
-    };
-
-    var defenderHpDown = defender.hp - (atkDiff * multiplier(3,4) + multiplier(25, 90));
-
-    var damageDone = defender.hp - defenderHpDown;
-
-    defender.hp = defenderHpDown;
-
-    var hit = new Audio;
-    hit.src = "./sounds/effects/hit.wav";
-    hit.play();
-
-    $('#damageAnnouncer').html(attacker.name + " did " + damageDone + " damage to the " + defender.name + ".");
-    // $('#turnAnnouncer').html(defender.name + "'s HP is now: " + defenderHpDown + "/" + defender.defaultHp);
-    $('#foeBar').html("-" + damageDone);
-
-    setTimeout(function(){
-      $('#foeBar').html(" ");
-    }, 2000);
-
-    if (defender.hp < 1) {
-      $('#damageAnnouncer').html(attacker.name + " has defeated the " + defender.name + "!");
-      $('#foe').html("KO!");
-    };
-
-    healthCheck();
-    gameOver();
-    healthBarsUpdate();
-    readNextToken();
-
+  var multiplier = function (min,max){
+      return Math.floor(Math.random(1)*(max-min+1)+min);
   };
+
+  var defenderHpDown = titan.hp - (atkDiff * multiplier(3,4) + multiplier(25, 90));
+
+  var damageDone = titan.hp - defenderHpDown;
+
+  titan.hp = defenderHpDown;
+
+  var hit = new Audio();
+  hit.src = "./sounds/effects/hit.wav";
+  hit.play();
+
+  $('#damageAnnouncer').html(attacker.name + " did " + damageDone + " damage to the " + titan.name + ".");
+
+  $('#foeBar').html("-" + damageDone);
+
+  setTimeout(function(){
+    $('#foeBar').html(" ");
+  }, 2000);
+
+  if (titan.hp < 1) {
+    $('#damageAnnouncer').html(attacker.name + " has defeated the " + titan.name + "!");
+    titan.KO = true;
+  };
+
+  healthCheck();
+
+  healthBarsUpdate();
+
+  if(!gameOver()) {
+    readNextToken();
+  }
+
+};  
+
+
 
   //  ========= Cure spell ===============
 
 function castCure(target) {
 
-  if (current_character === whiteMage) {
+  var multiplier = function (min,max){
+      return Math.floor(Math.random(1)*(max-min+1)+min);
+  };
 
-    var multiplier = function (min,max){
-        return Math.floor(Math.random(1)*(max-min+1)+min);
-    };
+  var cureHpUp = (whiteMage.mag * multiplier(3,4) + multiplier(65, 135));
 
-    var cureHpUp = (whiteMage.mag * multiplier(3,4) + multiplier(65, 135));
+  var targetHealed = target.hp + cureHpUp;
 
-    var targetHealed = target.hp + cureHpUp;
+  target.hp = targetHealed;
 
-    target.hp = targetHealed;
+  var cure = new Audio();
+  cure.src = "./sounds/effects/cure.wav";
+  cure.play();
 
-    var cure = new Audio;
-    cure.src = "./sounds/effects/cure.wav";
-    cure.play();
+  $('#damageAnnouncer').html("WHITE MAGE healed " + target.name + " for " + cureHpUp + " HP!");
 
-    $('#damageAnnouncer').html("WHITE MAGE healed " + target.name + " for " + cureHpUp + " HP!");
-    // $('#turnAnnouncer').html(target.name + "'s HP is now: " + target.hp + "/" +  target.defaultHp);
+  if (target === fighter) {
+    $('#fhtBar').html("+" + cureHpUp);
+  } else if (target === whiteMage) {
+    $('#whmBar').html("+" + cureHpUp);
+  } else {
+    $('#blmBar').html("+" + cureHpUp);
+  }
 
+  setTimeout(function(){
+    $('#fhtBar').html(" ");
+    $('#whmBar').html(" ");
+    $('#blmBar').html(" ");
+  }, 2000);
 
-      if (target.hp > target.defaultHp) {
-        target.hp = target.defaultHp;
-      }
-    }; 
+  if (target.hp > target.defaultHp) {
+    target.hp = target.defaultHp;
+  }
 
-    // $('#playerCharacter1').html("<p>" + target.hp + "/" + target.defaultHp + "</p>")
+  healthCheck();
 
-    healthCheck();
-    gameOver();
-    healthBarsUpdate();
+  healthBarsUpdate();
+
+  if(!gameOver()) {
     readNextToken();
-
+  }
 };
 
 // Black Mage's Fire Spell ==========
 
 function castFire(target) {
 
-    var multiplier = function (min,max){
-        return Math.floor(Math.random(1)*(max-min+1)+min);
-    };
+  var multiplier = function (min,max){
+      return Math.floor(Math.random(1)*(max-min+1)+min);
+  };
 
-    var fireDmg = (blackMage.mag * multiplier(4,5) + multiplier(65, 135));
+  var fireDmg = (blackMage.mag * multiplier(4,5) + multiplier(65, 135));
 
-    // var fireDmgDone = target.hp - fireDmg;
+  // var fireDmgDone = target.hp - fireDmg;
 
-    target.hp = target.hp - fireDmg;
+  target.hp = target.hp - fireDmg;
 
-    $('.FireSprite').html('<img src="./images/sprites/FireSprite.gif" height="400px" id="fireGif" />');
+  $('.FireSprite').html('<img src="./images/sprites/FireSprite.gif" height="400px" id="fireGif" />');
 
-    setTimeout(function(){
-      $('#fireGif').remove();
-    }, 2000);
+  setTimeout(function(){
+    $('#fireGif').remove();
+  }, 2000);
 
-    $('#foeBar').html("-" + fireDmg);
+  $('#foeBar').html("-" + fireDmg);
 
-    setTimeout(function(){
-      $('#foeBar').html(" ");
-    }, 2000);
+  setTimeout(function(){
+    $('#foeBar').html(" ");
+  }, 2000);
 
-    var fire = new Audio;
-    fire.src = "./sounds/effects/fire.wav";
-    fire.play();
+  var fire = new Audio();
+  fire.src = "./sounds/effects/fire.wav";
+  fire.play();
 
-    $('#damageAnnouncer').html("BLACK MAGE cast FIRE! " + target.name + " took " + fireDmg + " damage!");
-    // $('#turnAnnouncer').html(target.name + "'s HP is now: " + target.hp + "/" + target.defaultHp);
+  $('#damageAnnouncer').html("BLACK MAGE cast FIRE! " + target.name + " took " + fireDmg + " damage!");
+  // $('#turnAnnouncer').html(target.name + "'s HP is now: " + target.hp + "/" + target.defaultHp);
 
-    healthCheck();
-    gameOver();
-    healthBarsUpdate();
+  healthCheck();
+
+  healthBarsUpdate();
+
+  if(!gameOver()) {
     readNextToken();
+  }
 };
 
 // Foe attack round =====
@@ -446,116 +366,158 @@ var foeMoveRandom = function() {
 
 
 foeAttackTarget = function() {
-      var randomIndex = Math.floor(Math.random() * 3);
-      var targets = partyMemberArray;
-        this.target = targets[randomIndex];
-        foeAttack(this.target);
+  var targets = partyMemberArray;
+  var target = targets[Math.floor(Math.random() * 2)];
 
-        // if (this.targets.hp > 1) {
-        //   this.target = targets[randomIndex];
-        //   foeAttack(this.target);
-        // } else {
-        //   foeAttack(this.target+1);
-        // }
-      }
+  while(target.KO) {
+    target = targets[Math.floor(Math.random() * 2)];
+  }
+
+  foeAttack(target);
+};
 
 
-function foeAttack() {
+function foeAttack(target) {
 
-  attacker = titan;
-  defender = target;
-
-    var physDiff = defender.def - attacker.str;
-
-    var atkDiff = attacker.atk - physDiff;
-
-    var multiplier = function (min,max) {
-        return Math.floor(Math.random(1)*(max-min+1)+min);
+  if (target === fighter) {
+      $("#playerCharacter1").fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
+  } else if (target === whiteMage) {
+      $("#playerCharacter2").fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
+  } else {
+      $("#playerCharacter3").fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
     }
+  
 
-    var defenderHpDown = defender.hp - (atkDiff * multiplier(3,4) + multiplier(25, 90));
+  var physDiff = target.def - titan.str;
 
-    var damageDone = defender.hp - defenderHpDown;
+  var atkDiff = titan.atk - physDiff;
 
-    defender.hp = defenderHpDown;
-
-    var ouchiesIncoming = new Audio;
-    ouchiesIncoming.src = "./sounds/effects/FoeAttack.wav";
-    ouchiesIncoming.play();
-
-    $('#damageAnnouncer').html(attacker.name + " did " + damageDone + " damage to the " + defender.name + ".");
-    // $('#turnAnnouncer').html(defender.name + "'s HP is now: " + defenderHpDown + "/" + defender.defaultHp);
-      // $('#playerCharacter1').html("<p>" + defenderHpDown + "/" + defender.defaultHp + "</p>");
-
-    if (defender.hp < 1) {
-      $('#damageAnnouncer').html(attacker.name + " has defeated the " + defender.name + "!");
-      // $('#playerCharacter1').html("<p>KO!</p>");
-      defender.KO = true;
-      healthCheck();
-      gameOver();
-    }
-    healthBarsUpdate();
+  var multiplier = function (min,max) {
+      return Math.floor(Math.random(1)*(max-min+1)+min);
   };
+
+  var defenderHpDown = target.hp - (atkDiff * multiplier(3,4) + multiplier(25, 90));
+
+  var damageDone = target.hp - defenderHpDown;
+
+  target.hp = defenderHpDown;
+
+  function shakeitallabout() {
+    $("#wrapper").effect( "shake", {times:4}, 1000 );
+  }
+
+  var ouchiesIncoming = new Audio();
+  ouchiesIncoming.src = "./sounds/effects/FoeAttack.wav";
+  ouchiesIncoming.play();
+
+  $('#damageAnnouncer').html("TITAN did " + damageDone + " damage to the " + target.name + ".");
+
+  if (target.hp < 1) {
+    $('#damageAnnouncer').html("TITAN has defeated the " + target.name + "!");
+
+    target.KO = true;
+  }
+
+  healthCheck();
+
+  healthBarsUpdate();
+
+  if(!gameOver()) {
+    readNextToken();
+  }
+};
 
   // Big attack
 
-  function foeBigAttack() {
+function foeBigAttack() {
 
-    console.log("BIG ATTACK!");
+  console.log("BIG ATTACK!");
 
-      var multiplier = function (min,max) {
-          return Math.floor(Math.random(1)*(max-min+1)+min);
-      };
+  var multiplier = function (min,max) {
+      return Math.floor(Math.random(1)*(max-min+1)+min);
+  };
 
-      var defenderHpDown = (65 * multiplier(3,4) + multiplier(25, 90));
+  var defenderHpDown = (65 * multiplier(3,4) + multiplier(25, 90));
 
-      fighter.hp = fighter.hp - defenderHpDown;
-      whiteMage.hp = whiteMage.hp - defenderHpDown;
-      blackMage.hp = blackMage.hp - defenderHpDown;
+  fighter.hp = fighter.hp - defenderHpDown;
+  whiteMage.hp = whiteMage.hp - defenderHpDown;
+  blackMage.hp = blackMage.hp - defenderHpDown;
 
-      // defender.hp = defenderHpDown;
+  $("#playerCharacter1").fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
+  $("#playerCharacter2").fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300);
+  $("#playerCharacter3").fadeIn(300).fadeOut(300).fadeIn(300).fadeOut(300).fadeIn(300); 
 
-      var ouchiesIncoming = new Audio;
-      ouchiesIncoming.src = "./sounds/effects/FoeAttack.wav";
-      ouchiesIncoming.play();
+  var ouchiesIncoming = new Audio();
+  ouchiesIncoming.src = "./sounds/effects/FoeAttack.wav";
+  ouchiesIncoming.play();
 
-      function shake() {
-      $('#pcStack').effect("shake");
-    };
+  function shakeitallabout() {
+    $("#wrapper").effect( "shake", {times:4}, 1000 );
+  }
 
-      console.log("The party takes " + defenderHpDown + " damage!");
+  $('#damageAnnouncer').html("The party takes " + defenderHpDown + " damage!");
 
-      // $('#damageAnnouncer').html(attacker.name + " did " + damageDone + " damage to the " + defender.name + ".");
-      // $('#turnAnnouncer').html(defender.name + "'s HP is now: " + defenderHpDown + "/" + defender.defaultHp);
-      //   // $('#playerCharacter1').html("<p>" + defenderHpDown + "/" + defender.defaultHp + "</p>");
+  healthCheck();
 
-      // if (defender.hp < 1) {
-      //   $('#turnAnnouncer').html(attacker.name + " has defeated the " + defender.name + "!");
-      //   // $('#playerCharacter1').html("<p>KO!</p>");
-      //   gameOver();
-      $('#damageAnnouncer').html("The party takes " + defenderHpDown + " damage!");
-        // $('#playerCharacter1').html("<p>KO!</p>");
-        healthCheck();
-        gameOver();
+  healthBarsUpdate();
+  if(!gameOver()) {
+    readNextToken();
+  }
+};
 
-      healthBarsUpdate();
-    };
 
-    function healthCheck() {
-      for (var i = 0; i < partyMemberArray.length; i++) {
-        if (partyMemberArray[i].Hp < 1) {
-          partyMemberArray[i].KO = true;
-          this.partyMemberArray.hp = 0;
-         }
+// Check to see who's KO'd.
+
+function healthCheck() {
+  for (var i = 0; i < partyMemberArray.length; i++) {
+    if (partyMemberArray[i].hp < 1) {
+      partyMemberArray[i].KO = true;
+      partyMemberArray[i].hp = 0;
+      if (fighter.KO) {
+        $("#playerCharacter1").animate({
+              opacity: '0.5',
+          });
+      }
+      if (whiteMage.KO) {
+          $("#playerCharacter2").animate({
+                opacity: '0.5',
+          });
+        }
+      if (blackMage.KO) {
+        $("#playerCharacter3").animate({
+              opacity: '0.5',
+          });
       }
     }
+  }
+};
+
+// Win/lose conditions.
 
 function gameOver() {
-  if (fighter.KO === true && whiteMage.KO === true && blackMage.KO === true) {
-    alert("Game over! You lose...");
-  } else if (titan.KO === true) {
-    alert("Game over. You win!");
-  };
+  // console.log(fighter.KO, whiteMage.KO, blackMage.KO, fighter.KO && whiteMage.KO && blackMage.KO);
+  if (titan.KO) {
+
+  console.log("Game over!");
+
+  $('#foeCounter').fadeOut("slow");
+
+  $('#turnAnnouncer').html('<span id="winorloss">Victory!</span>');
+
+  bgm.pause();
+
+  setTimeout(function(){
+    fanfare.play();
+  }, 2000);
+
+  return ((fighter.KO && whiteMage.KO && blackMage.KO) || titan.KO);
+  } else if (fighter.KO && whiteMage.KO && blackMage.KO) {
+
+    $('#turnAnnouncer').html('<span id="winorloss">Defeated...</span>');
+
+    bgm.pause();
+    return ((fighter.KO && whiteMage.KO && blackMage.KO) || titan.KO);
+  }
 };
 
 
