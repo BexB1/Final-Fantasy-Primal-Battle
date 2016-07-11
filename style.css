@@ -10,6 +10,8 @@ body {
 /*div {
   border: 1px solid white;
 }*/
+
+
 #turnAnouncer {
   width: 200px;
   font-color: #FFF;
@@ -62,6 +64,7 @@ body {
   left: 80px;
   width: 500px;
   height: 600px;
+  z-index: -1;
 }
 
 #foe span {
@@ -75,9 +78,10 @@ body {
 #pcStack {
   display: inline-block;
   float: right;
+  margin: 15px;
+  padding: 15px;
   position: relative;
-  top: 100px;
-  right: 100px;
+  right: 200px;
 }
 
 #foeSelect {
@@ -93,18 +97,24 @@ body {
 /*  background-image: url(./images/sprites/OnionKnight1.png);*/
   background-repeat: no-repeat;
   background-size: 90%;
+  position: relative;
+  left: -80px;
 }
 
 #playerCharacter2 {
 /*  background-image: url(./images/sprites/WhiteMage1.png);*/
   background-repeat: no-repeat;
   background-size: 80%;
+  position: relative;
+  left: 75px;
 }
 
 #playerCharacter3 {
 /*  background-image: url(./images/sprites/BlackMage1.png);*/
   background-repeat: no-repeat;
   background-size: 80%;
+  position: relative;
+  top: 10px;
 }
 
 #playerCharacter1, #playerCharacter2, #playerCharacter3 {
@@ -116,6 +126,16 @@ body {
   line-height: 300px;
   font-size: 50px;
   color: #FFF;
+}
+
+/* Effects */
+
+.FireSprite {
+  position: fixed;
+  width: 300px;
+  top: 200px;
+  left: 200px;
+  z-index: 1;
 }
 
 @-webkit-keyframes hvr-pulse {
@@ -162,4 +182,102 @@ body {
   animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
   animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes hvr-bob {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes hvr-bob {
+  0% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+
+  50% {
+    -webkit-transform: translateY(-4px);
+    transform: translateY(-4px);
+  }
+
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+
+@-webkit-keyframes hvr-bob-float {
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes hvr-bob-float {
+  100% {
+    -webkit-transform: translateY(-8px);
+    transform: translateY(-8px);
+  }
+}
+
+.hvr-bob {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-animation-name: hvr-bob-float, hvr-bob;
+  animation-name: hvr-bob-float, hvr-bob;
+  -webkit-animation-duration: .3s, 1.5s;
+  animation-duration: .3s, 1.5s;
+  -webkit-animation-delay: 0s, .3s;
+  animation-delay: 0s, .3s;
+  -webkit-animation-timing-function: ease-out, ease-in-out;
+  animation-timing-function: ease-out, ease-in-out;
+  -webkit-animation-iteration-count: 1, infinite;
+  animation-iteration-count: 1, infinite;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  -webkit-animation-direction: normal, alternate;
+  animation-direction: normal, alternate;
+}
+
+@-webkit-keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+@keyframes flash {
+  from, 50%, to {
+    opacity: 1;
+  }
+
+  25%, 75% {
+    opacity: 0;
+  }
+}
+
+.flash {
+  -webkit-animation-name: flash;
+  animation-name: flash;
 }
