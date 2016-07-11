@@ -45,7 +45,7 @@ var current_character = fighter;
 var fighter = new PartyMember("FIGHTER", 55, 75, 25, 0, 1500, 1500, 0, false);
 var blackMage = new PartyMember("BLACK MAGE", 55, 35, 10, 75, 1000, 1000, 500, false);
 var whiteMage = new PartyMember("WHITE MAGE", 55, 35, 10, 75, 1250, 1250, 500, false);
-var titan = new PartyMember("TITAN", 75, 90, 95, 75, 2000, 5000, 5000, false);
+var titan = new PartyMember("TITAN", 75, 90, 95, 75, 5000, 5000, 5000, false);
 
 partyMemberArray.push(fighter);
 partyMemberArray.push(whiteMage);
